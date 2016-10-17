@@ -1,123 +1,144 @@
-(function ($) {
-    // To top button
-    $("#back-to-top").on('click', function () {
-        $('body, html').animate({ scrollTop: 0 }, 600);
+require([], function (){
+
+    var isMobileInit = false;
+    var loadMobile = function(){
+        require([yiliaConfig.rootUrl + 'js/mobile.js'], function(mobile){
+            mobile.init();
+            isMobileInit = true;
+        });
+    }
+    var isPCInit = false;
+    var loadPC = function(){
+        require([yiliaConfig.rootUrl + 'js/pc.js'], function(pc){
+            pc.init();
+            isPCInit = true;
+        });
+    }
+
+    var browser={
+        versions:function(){
+        var u = window.navigator.userAgent;
+        return {
+            trident: u.indexOf('Trident') > -1, //IE内核
+            presto: u.indexOf('Presto') > -1, //opera内核
+            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+            iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+            iPad: u.indexOf('iPad') > -1, //是否为iPad
+            webApp: u.indexOf('Safari') == -1 ,//是否为web应用程序，没有头部与底部
+            weixin: u.indexOf('MicroMessenger') == -1 //是否为微信浏览器
+            };
+        }()
+    }
+
+    $(window).bind("resize", function(){
+        if(isMobileInit && isPCInit){
+            $(window).unbind("resize");
+            return;
+        }
+        var w = $(window).width();
+        if(w >= 700){
+            loadPC();
+        }else{
+            loadMobile();
+        }
     });
 
-    // Nav bar toggle
-    $('#main-nav-toggle').on('click', function () {
-        $('.nav-container-inner').slideToggle();
-    });
+    if(browser.versions.mobile === true || $(window).width() < 700){
+        loadMobile();
+    }else{
+        loadPC();
+    }
 
-    // Caption
-    $('.article-entry').each(function(i) {
-        $(this).find('img').each(function() {
-            if (this.alt) {
-                $(this).after('<span class="caption">' + this.alt + '</span>');
+    //是否使用fancybox
+    if(yiliaConfig.fancybox === true){
+        require([yiliaConfig.rootUrl + 'fancybox/jquery.fancybox.js'], function(pc){
+            var isFancy = $(".isFancy");
+            if(isFancy.length != 0){
+                var imgArr = $(".article-inner img");
+                for(var i=0,len=imgArr.length;i<len;i++){
+                    var src = imgArr.eq(i).attr("src");
+                    var title = imgArr.eq(i).attr("alt");
+                    imgArr.eq(i).replaceWith("<a href='"+src+"' title='"+title+"' rel='fancy-group' class='fancy-ctn fancybox'><img src='"+src+"' title='"+title+"'></a>");
+                }
+                $(".article-inner .fancy-ctn").fancybox();
             }
-
-            $(this).wrap('<a href="' + this.src + '" title="' + this.alt + '" class="gallery-item"></a>');
         });
 
-    });
-    if (typeof lightGallery != 'undefined') {
-        var options = {
-            selector: '.gallery-item',
-        };
-        lightGallery($('.article-entry')[0], options);
-        lightGallery($('.article-gallery')[0], options);
+    }
+    //是否开启动画
+    if(yiliaConfig.animate === true){
+
+        require([yiliaConfig.rootUrl + 'js/jquery.lazyload.js'], function(){
+            //avatar
+            $(".js-avatar").attr("src", $(".js-avatar").attr("lazy-src"));
+            $(".js-avatar")[0].onload = function(){
+                $(".js-avatar").addClass("show");
+            }
+        });
+
+      if(yiliaConfig.isHome === true) {
+        // 滚动条监听使用scrollreveal.js
+        // https://github.com/jlmakes/scrollreveal.js
+        // 使用cdn[//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js]
+        require([
+          '//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js'
+        ], function (ScrollReveal) {
+          // 更多animation:
+          // http://daneden.github.io/animate.css/
+          var animationNames = [
+            "pulse", "fadeIn","fadeInRight", "flipInX", "lightSpeedIn","rotateInUpLeft", "slideInUp","zoomIn",
+            ],
+            len = animationNames.length,
+            randomAnimationName = animationNames[Math.ceil(Math.random() * len) - 1];
+
+          // ie9 不支持css3 keyframe动画, safari不支持requestAnimationFrame, 不使用随机动画，切回原来的动画
+          if (!window.requestAnimationFrame) {
+              $('.body-wrap > article').css({opacity: 1});
+
+              if (navigator.userAgent.match(/Safari/i)) {
+                  function showArticle(){
+                      $(".article").each(function(){
+                          if( $(this).offset().top <= $(window).scrollTop()+$(window).height() && !($(this).hasClass('show')) ) {
+                              $(this).removeClass("hidden").addClass("show");
+                              $(this).addClass("is-hiddened");
+                          }else{
+                              if(!$(this).hasClass("is-hiddened")){
+                                  $(this).addClass("hidden");
+                              }
+                          }
+                      });
+                  }
+                  $(window).on('scroll', function(){
+                      showArticle();
+                  });
+                  showArticle();
+              }
+              return;
+          }
+          // document.body有些浏览器不支持监听scroll，所以使用默认的document.documentElement
+          ScrollReveal({
+            duration: 0,
+            afterReveal: function (domEl) {
+              // safari不支持requestAnimationFrame不支持document.documentElement的onscroll所以这里不会执行
+              // 初始状态设为opacity: 0, 动画效果更平滑一些(由于脚本加载是异步，页面元素渲染后在执行动画，感觉像是延时)
+              $(domEl).addClass('animated ' + randomAnimationName).css({opacity: 1});
+            }
+          }).reveal('.body-wrap > article');
+
+        });
+      } else {
+        $('.body-wrap > article').css({opacity: 1});
+      }
+
     }
 
-    // Sidebar expend
-    $('#sidebar .sidebar-toggle').click(function () {
-        if($('#sidebar').hasClass('expend')) {
-            $('#sidebar').removeClass('expend');
-        } else {
-            $('#sidebar').addClass('expend');
-        }
-    });
-
-
-    // Remove extra main nav wrap
-    $('.main-nav-list > li').unwrap();
-
-    // Highlight current nav item
-    $('#main-nav > li > .main-nav-list-link').each(function () {
-        if($('.page-title-link').length > 0){
-            if ($(this).html().toUpperCase() == $('.page-title-link').html().toUpperCase()) {
-                $(this).addClass('current');
-            } else if ($(this).attr('href') == $('.page-title-link').attr('data-url')) {
-                $(this).addClass('current');
-            }
-        }
-    });
-
-    // Auto hide main nav menus
-    function autoHideMenus(){
-        var max_width = $('.nav-container-inner').width() - 10;
-        var main_nav_width = $('#main-nav').width();
-        var sub_nav_width = $('#sub-nav').width();
-        if (main_nav_width + sub_nav_width > max_width) {
-            // If more link not exists
-            if ($('.main-nav-more').length == 0) {
-                $(['<li class="main-nav-list-item top-level-menu main-nav-more">',
-                    '<a class="main-nav-list-link" href="javascript:;">More</a>',
-                    '<ul class="main-nav-list-child">',
-                    '</ul></li>'].join('')).appendTo($('#main-nav'));
-                // Bind hover event
-                $('.main-nav-more').hover(function () {
-                    if($(window).width() < 480) {
-                        return;
-                    }
-                    $(this).children('.main-nav-list-child').slideDown('fast');
-                }, function () {
-                    if($(window).width() < 480) {
-                        return;
-                    }
-                    $(this).children('.main-nav-list-child').slideUp('fast');
-                });
-            }
-            var child_count = $('#main-nav').children().length;
-            for (var i = child_count - 2; i >= 0; i--) {
-                var element = $('#main-nav').children().eq(i);
-                if (main_nav_width + sub_nav_width > max_width) {
-                    element.prependTo($('.main-nav-more > ul'));
-                    main_nav_width = $('#main-nav').width();
-                } else {
-                    return;
-                }
-            }
-        }
-        // Nav bar is wide enough
-        if ($('.main-nav-more').length > 0) {
-            $('.main-nav-more > ul').children().appendTo($('#main-nav'));
-            $('.main-nav-more').remove();
-        }
+    //是否新窗口打开链接
+    if(yiliaConfig.open_in_new == true){
+        $(".article a[href]").attr("target", "_blank")
     }
-    autoHideMenus();
-
-    $(window).resize(function () {
-        autoHideMenus();
-    });
-
-    // Fold second-level menu
-    $('.main-nav-list-item').hover(function () {
-        if ($(window).width() < 480) {
-            return;
-        }
-        $(this).children('.main-nav-list-child').slideDown('fast');
-    }, function () {
-        if ($(window).width() < 480) {
-            return;
-        }
-        $(this).children('.main-nav-list-child').slideUp('fast');
-    });
-
-    // Add second-level menu mark
-    $('.main-nav-list-item').each(function () {
-        if ($(this).find('.main-nav-list-child').length > 0) {
-            $(this).addClass('top-level-menu');
-        }
-    });
-
-})(jQuery);
+    $(".archive-article-title").attr("target", "_blank");
+});
