@@ -233,6 +233,61 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-之间的区别。" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/28/之间的区别。/" class="article-date">
+      <time datetime="2016-10-28T11:06:40.000Z" itemprop="datePublished">2016-10-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/28/之间的区别。/">call、apply 和 bind 的区别</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="number">1.</span> 不传递参数的情况</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a,b,c</span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="keyword">this</span>);</div><div class="line">        <span class="built_in">console</span>.log(a,b,c)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============call()============'</span>)</div><div class="line">    <span class="built_in">console</span>.log(foo.call())</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============call()============'</span>)</div><div class="line">    call 会让函数执行</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============apply()============'</span>)</div><div class="line">    <span class="built_in">console</span>.log(foo.apply())</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============apply()============'</span>)</div><div class="line">    apply 会让函数执行</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============bind()============'</span>)</div><div class="line">    <span class="built_in">console</span>.log(foo.bind())</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============bind()============'</span>)</div><div class="line">    bind 不会执行这个函数，会复制函数</div><div class="line"></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo1</span> (<span class="params">a,b,c</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>)</div><div class="line">        <span class="built_in">console</span>.log(a,b,c)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============call(new Date())============'</span>)</div><div class="line">    <span class="built_in">console</span>.log(foo.call(<span class="keyword">new</span> <span class="built_in">Date</span>()))</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============call(new Date())============'</span>)</div><div class="line">    call 调用并改变函数执行时<span class="keyword">this</span>指向</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============apply(new Date())============'</span>)</div><div class="line">    <span class="built_in">console</span>.log(foo.apply(<span class="keyword">new</span> <span class="built_in">Date</span>()))</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============apply(new Date())============'</span>)</div><div class="line">    apply 调用并改变函数执行时<span class="keyword">this</span>指向</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============bind(new Date())============'</span>)</div><div class="line">    <span class="built_in">console</span>.log(  foo.bind(<span class="keyword">new</span> <span class="built_in">Date</span>())())</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============bind(new Date())============'</span>)</div><div class="line">    bind 只是改变<span class="keyword">this</span>  ！！！！不会立即执行！！！！</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo2</span> (<span class="params">a,b,c</span>)</span>&#123;</div><div class="line">        connsole.log(a,b,c)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============call(null)============'</span>)</div><div class="line">    <span class="built_in">console</span>.log(foo.call(<span class="literal">null</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>))   <span class="comment">// =&gt;   foo.call(null, 1, 2, 3)</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============call(null)============'</span>)</div><div class="line">    call 调用并改变函数执行时<span class="keyword">this</span>指向，并通过后续的参数指定函数调用时的实参</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============apply(null)============'</span>)</div><div class="line">    <span class="built_in">console</span>.log(foo.apply(<span class="literal">null</span>, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]))</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============apply(null)============'</span>)</div><div class="line">    apply 调用并改变函数执行时<span class="keyword">this</span>指向，并将第二参数（必须是数组！！！）作为实参传入</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============bind(null)============'</span>)</div><div class="line">    <span class="built_in">console</span>.log(foo.bind(<span class="literal">null</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>))</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============bind(null)============'</span>)</div><div class="line">    bind 只是改变<span class="keyword">this</span> !!!!!不会立即执行!!!!! 如果需要指定调用时的实参可以参考call</div></pre></td></tr></table></figure>
+<p>总结：apply 、call 二者而言，作用完全一样，只是接受参数的方式不同而已，call的传参方式是一个个传的，而apply是以数组的形式从传参的,bind是在ES5中扩展的（IE6,7,8不支持），它是改变上下文的this指向。它跟call很相似。bind的返回值是函数，它的第二个以及以后的参数加上绑定函数运行时本身的参数按照顺序作为原函数的参数来调用原函数。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-mvc-和-mvvm-的区别" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
