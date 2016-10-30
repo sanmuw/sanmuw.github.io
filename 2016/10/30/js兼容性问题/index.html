@@ -5,19 +5,16 @@
   
   <title>js兼容性问题 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="javascript的兼容性问题处理（借鉴来的，这篇文章的网上也可以查到）文章原网址：http://www.jb51.net/article/21483.htm
-一、document.formName.item(”itemName”) 问题 问题说明：IE下，可以使用 document.formName.item(”itemName”) 或 document.formName.elements [">
+  <meta name="description" content="javascript的兼容性问题处理（借鉴来的，这篇文章的网上也可以查到）一、document.formName.item(”itemName”) 问题 问题说明：IE下，可以使用 document.formName.item(”itemName”) 或 document.formName.elements [“elementName”]；Firefox 下，只能使用document.formNa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js兼容性问题">
 <meta property="og:url" content="http://yoursite.com/2016/10/30/js兼容性问题/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="javascript的兼容性问题处理（借鉴来的，这篇文章的网上也可以查到）文章原网址：http://www.jb51.net/article/21483.htm
-一、document.formName.item(”itemName”) 问题 问题说明：IE下，可以使用 document.formName.item(”itemName”) 或 document.formName.elements [">
-<meta property="og:updated_time" content="2016-10-30T12:37:18.009Z">
+<meta property="og:description" content="javascript的兼容性问题处理（借鉴来的，这篇文章的网上也可以查到）一、document.formName.item(”itemName”) 问题 问题说明：IE下，可以使用 document.formName.item(”itemName”) 或 document.formName.elements [“elementName”]；Firefox 下，只能使用document.formNa">
+<meta property="og:updated_time" content="2016-10-30T12:38:41.572Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js兼容性问题">
-<meta name="twitter:description" content="javascript的兼容性问题处理（借鉴来的，这篇文章的网上也可以查到）文章原网址：http://www.jb51.net/article/21483.htm
-一、document.formName.item(”itemName”) 问题 问题说明：IE下，可以使用 document.formName.item(”itemName”) 或 document.formName.elements [">
+<meta name="twitter:description" content="javascript的兼容性问题处理（借鉴来的，这篇文章的网上也可以查到）一、document.formName.item(”itemName”) 问题 问题说明：IE下，可以使用 document.formName.item(”itemName”) 或 document.formName.elements [“elementName”]；Firefox 下，只能使用document.formNa">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -273,8 +270,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="javascript的兼容性问题处理（借鉴来的，这篇文章的网上也可以查到）"><a href="#javascript的兼容性问题处理（借鉴来的，这篇文章的网上也可以查到）" class="headerlink" title="javascript的兼容性问题处理（借鉴来的，这篇文章的网上也可以查到）"></a>javascript的兼容性问题处理（借鉴来的，这篇文章的网上也可以查到）</h1><p>文章原网址：<a href="http://www.jb51.net/article/21483.htm" target="_blank" rel="external">http://www.jb51.net/article/21483.htm</a></p>
-<h2 id="一、document-formName-item-”itemName”-问题"><a href="#一、document-formName-item-”itemName”-问题" class="headerlink" title="一、document.formName.item(”itemName”) 问题"></a>一、document.formName.item(”itemName”) 问题</h2><p> 问题说明：IE下，可以使用 document.formName.item(”itemName”) 或 document.formName.elements [“elementName”]；Firefox 下，只能使用document.formName.elements[“elementName”]。<br>解决方法：统一使用document.formName.elements[“elementName”]。 </p>
+        <h1 id="javascript的兼容性问题处理（借鉴来的，这篇文章的网上也可以查到）"><a href="#javascript的兼容性问题处理（借鉴来的，这篇文章的网上也可以查到）" class="headerlink" title="javascript的兼容性问题处理（借鉴来的，这篇文章的网上也可以查到）"></a>javascript的兼容性问题处理（借鉴来的，这篇文章的网上也可以查到）</h1><h2 id="一、document-formName-item-”itemName”-问题"><a href="#一、document-formName-item-”itemName”-问题" class="headerlink" title="一、document.formName.item(”itemName”) 问题"></a>一、document.formName.item(”itemName”) 问题</h2><p> 问题说明：IE下，可以使用 document.formName.item(”itemName”) 或 document.formName.elements [“elementName”]；Firefox 下，只能使用document.formName.elements[“elementName”]。<br>解决方法：统一使用document.formName.elements[“elementName”]。 </p>
 <h2 id="二、集合类对象问题"><a href="#二、集合类对象问题" class="headerlink" title="二、集合类对象问题"></a>二、集合类对象问题</h2><p>问题说明：IE下，可以使用（）和[]获取集合类对象；Firefox下，只能使用[]获取集合类对象。<br>解决方法：统一使用[]获取集合类对象</p>
 <h2 id="三、自定义属性问题"><a href="#三、自定义属性问题" class="headerlink" title="三、自定义属性问题"></a>三、自定义属性问题</h2><p>问题说明：IE下，可以使用获取常规属性的方法来获取自定义属性，也可以使用 getAttribute() 获取自定义属性；Firefox下，只能使用 getAttribute() 获取自定义属性。<br>解决方法：统一通过 getAttribute() 获取自定义属性。</p>
 <h2 id="四、eval-”idName”-问题"><a href="#四、eval-”idName”-问题" class="headerlink" title="四、eval(”idName”)问题"></a>四、eval(”idName”)问题</h2><p>问题说明：IE下，可以使用 eval(”idName”) 或 getElementById(”idName”) 来取得 id 为 idName 的HTML对象；Firefox下，只能使用 getElementById(”idName”) 来取得 id 为 idName 的HTML对象。<br>解决方法：统一使用getElementById（”idName”）来取得id为idName的HTML对象</p>
@@ -320,7 +316,7 @@
         <p><span>本文标题:</span><a href="/2016/10/30/js兼容性问题/">js兼容性问题</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 三木 的个人博客">三木</a></p>
         <p><span>发布时间:</span>2016年10月30日 - 11时14分</p>
-        <p><span>最后更新:</span>2016年10月30日 - 20时37分</p>
+        <p><span>最后更新:</span>2016年10月30日 - 20时38分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/10/30/js兼容性问题/" title="js兼容性问题">http://yoursite.com/2016/10/30/js兼容性问题/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/10/30/js兼容性问题/　　作者: 三木" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
