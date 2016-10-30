@@ -149,7 +149,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
+                        <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
                     </div>
                 </section>
                 
@@ -271,99 +271,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax/">ajax</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-js兼容性问题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/30/js兼容性问题/" class="article-date">
-      <time datetime="2016-10-30T03:14:40.000Z" itemprop="datePublished">2016-10-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/30/js兼容性问题/">js兼容性问题</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="javascript的兼容性问题处理（借鉴来的，这篇文章的网上也可以查到）"><a href="#javascript的兼容性问题处理（借鉴来的，这篇文章的网上也可以查到）" class="headerlink" title="javascript的兼容性问题处理（借鉴来的，这篇文章的网上也可以查到）"></a>javascript的兼容性问题处理（借鉴来的，这篇文章的网上也可以查到）</h1><p>文章原网址：<a href="http://www.jb51.net/article/21483.htm" target="_blank" rel="external">http://www.jb51.net/article/21483.htm</a></p>
-<h2 id="一、document-formName-item-”itemName”-问题"><a href="#一、document-formName-item-”itemName”-问题" class="headerlink" title="一、document.formName.item(”itemName”) 问题"></a>一、document.formName.item(”itemName”) 问题</h2><p> 问题说明：IE下，可以使用 document.formName.item(”itemName”) 或 document.formName.elements [“elementName”]；Firefox 下，只能使用document.formName.elements[“elementName”]。<br>解决方法：统一使用document.formName.elements[“elementName”]。 </p>
-<h2 id="二、集合类对象问题"><a href="#二、集合类对象问题" class="headerlink" title="二、集合类对象问题"></a>二、集合类对象问题</h2><p>问题说明：IE下，可以使用（）和[]获取集合类对象；Firefox下，只能使用[]获取集合类对象。<br>解决方法：统一使用[]获取集合类对象</p>
-<h2 id="三、自定义属性问题"><a href="#三、自定义属性问题" class="headerlink" title="三、自定义属性问题"></a>三、自定义属性问题</h2><p>问题说明：IE下，可以使用获取常规属性的方法来获取自定义属性，也可以使用 getAttribute() 获取自定义属性；Firefox下，只能使用 getAttribute() 获取自定义属性。<br>解决方法：统一通过 getAttribute() 获取自定义属性。</p>
-<h2 id="四、eval-”idName”-问题"><a href="#四、eval-”idName”-问题" class="headerlink" title="四、eval(”idName”)问题"></a>四、eval(”idName”)问题</h2><p>问题说明：IE下，可以使用 eval(”idName”) 或 getElementById(”idName”) 来取得 id 为 idName 的HTML对象；Firefox下，只能使用 getElementById(”idName”) 来取得 id 为 idName 的HTML对象。<br>解决方法：统一使用getElementById（”idName”）来取得id为idName的HTML对象</p>
-<h2 id="五、变量名与其HTML对象ID相同的问题"><a href="#五、变量名与其HTML对象ID相同的问题" class="headerlink" title="五、变量名与其HTML对象ID相同的问题"></a>五、变量名与其HTML对象ID相同的问题</h2><p>问题说明：IE下，HTML对象的ID可以作为 document 的下属对象变量名直接使用，Firefox下则不能；Firefox下，可以使用与HTML对象ID相同的变量名，IE下则不能。<br>解决方法：使用 document.getElementById(”idName”) 代替 document.idName。最好不要取HTML对象ID相同的变量名，以减少错误；在声明变量时，一律加上var关键字，以避免歧义。</p>
-<h2 id="六、const问题"><a href="#六、const问题" class="headerlink" title="六、const问题"></a>六、const问题</h2><p>问题说明：Firefox下，可以使用const关键字或var关键字来定义常量；IE下，只能使用var关键字来定义常量。<br>解决方法：统一使用var关键字来定义常量</p>
-<h2 id="七、input-type属性问题"><a href="#七、input-type属性问题" class="headerlink" title="七、input.type属性问题"></a>七、input.type属性问题</h2><p>问题说明：IE下 input.type 属性为只读；但是Firefox下 input.type 属性为读写。<br>解决办法：不修改 input.type 属性。如果必须要修改，可以先隐藏原来的input，然后在同样的位置再插入一个新的input元素。 </p>
-<h2 id="八、window-event问题"><a href="#八、window-event问题" class="headerlink" title="八、window.event问题"></a>八、window.event问题</h2><p>问题说明：window.event 只能在IE下运行，而不能在Firefox下运行，这是因为Firefox的event只能在事件发生的现场使用。<br>解决方法：在事件发生的函数上加上event参数，在函数体内(假设形参为evt)使用 var myEvent = evt?evt:(window.event?window.event:null) </p>
-<p>实例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;input type=<span class="string">'button'</span> onclick=<span class="string">'doSomething(event)'</span>/&gt;</div><div class="line">&lt;script language='javascript'&gt;</div><div class="line"></div><div class="line">function doSomething(event)&#123;</div><div class="line">    var myEvent = evt?evt:(window.event?window.event:null)</div><div class="line">    ......</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<h2 id="九、event-x与event-y问题"><a href="#九、event-x与event-y问题" class="headerlink" title="九、event.x与event.y问题"></a>九、event.x与event.y问题</h2><p>问题说明：IE下，even对象有x、y属性，但是没有pageX、pageY属性；Firefox下，even对象有pageX、pageY属性，但是没有x、y属性。<br>解决方法：var myX = event.x ? event.x : event.pageX; var myY = event.y ? event.y:event.pageY;<br>如果考虑第8条问题，就改用myEvent代替event即可。</p>
-<h2 id="十一、window-location-href问题"><a href="#十一、window-location-href问题" class="headerlink" title="十一、window.location.href问题"></a>十一、window.location.href问题</h2><p>问题说明：IE或者Firefox2.0.x下，可以使用window.location或window.location.href；Firefox1.5.x下，只能使用window.location。<br>解决方法：使用 window.location 来代替 window.location.href。当然也可以考虑使用 location.replace()方法。 </p>
-<h2 id="十二、模态和非模态窗口问题"><a href="#十二、模态和非模态窗口问题" class="headerlink" title="十二、模态和非模态窗口问题"></a>十二、模态和非模态窗口问题</h2><p>问题说明：IE下，可以通过showModalDialog和showModelessDialog打开模态和非模态窗口；Firefox下则不能。<br>解决方法：直接使用 window.open(pageURL,name,parameters) 方式打开新窗口。<br>如果需要将子窗口中的参数传递回父窗口，可以在子窗口中使用window.opener来访问父窗口。如果需要父窗口控制子窗口的话，使用 var subWindow = window.open(pageURL,name,parameters); 来获得新开的窗口对象。 </p>
-<h2 id="十三、frame和iframe问题"><a href="#十三、frame和iframe问题" class="headerlink" title="十三、frame和iframe问题"></a>十三、frame和iframe问题</h2><p>以下面的frame为例： </p>
-<p>(1)访问frame对象<br>IE：使用window.frameId或者window.frameName来访问这个frame对象；<br>Firefox：使用window.frameName来访问这个frame对象；<br>解决方法：统一使用 window.document.getElementById(”frameId”) 来访问这个frame对象；<br>(2)切换frame内容<br>在IE和Firefox中都可以使用 window.document.getElementById(”frameId”).src = “webjx.com.html”或 window.frameName.location = “webjx.com.html”来切换frame的内容；<br>如果需要将frame中的参数传回父窗口，可以在frame中使用parent关键字来访问父窗口。</p>
-<h2 id="十四、body载入问题"><a href="#十四、body载入问题" class="headerlink" title="十四、body载入问题"></a>十四、body载入问题</h2><p>问题说明：Firefox的body对象在body标签没有被浏览器完全读入之前就存在；而IE的body对象则必须在body标签被浏览器完全读入之后才存在。<br>IE6、Opera9以及FireFox2中不存在上述问题，单纯的JS脚本可以访问在脚本之前已经载入的所有对象和元素，即使这个元素还没有载入完成。 </p>
-<h2 id="十五、事件委托方法"><a href="#十五、事件委托方法" class="headerlink" title="十五、事件委托方法"></a>十五、事件委托方法</h2><p>问题说明：IE下，使用 document.body.onload = inject; 其中function inject()在这之前已被实现；在Firefox下，使用 document.body.onload = inject();<br>解决方法：统一使用 document.body.onload=new Function(‘inject()’); 或者 document.body.onload = function(){/<em> 这里是代码 </em>/}<br>[注意] Function和function的区别 </p>
-<h2 id="十六、访问的父元素的区别"><a href="#十六、访问的父元素的区别" class="headerlink" title="十六、访问的父元素的区别"></a>十六、访问的父元素的区别</h2><p>问题说明：在IE下，使用 obj.parentElement 或 obj.parentNode 访问obj的父结点；在firefox下，使用 obj.parentNode 访问obj的父结点。<br>解决方法：因为firefox与IE都支持DOM，因此统一使用obj.parentNode 来访问obj的父结点。</p>
-<h2 id="十七、innerText的问题"><a href="#十七、innerText的问题" class="headerlink" title="十七、innerText的问题."></a>十七、innerText的问题.</h2><p>问题说明：innerText在IE中能正常工作，但是innerText在FireFox中却不行。<br>解决方法：在非IE浏览器中使用textContent代替innerText。<br>实例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(navigator.appName.indexOf(<span class="string">"Explorer"</span>) &gt;<span class="number">-1</span>)&#123; </div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'element'</span>).innerText = <span class="string">"my text"</span>; </div><div class="line">&#125; <span class="keyword">else</span>&#123; </div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'element'</span>).textContent = <span class="string">";my text"</span>; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>[注] innerHTML 同时被ie、firefox等浏览器支持，其他的，如outerHTML等只被ie支持，最好不用。</p>
-<h2 id="十八、Table操作问题"><a href="#十八、Table操作问题" class="headerlink" title="十八、Table操作问题"></a>十八、Table操作问题</h2><p>问题说明：ie、firefox以及其它浏览器对于 table 标签的操作都各不相同，在ie中不允许对table和tr的innerHTML赋值，使用js增加一个tr时，使用appendChild方法也不管用。document.appendChild在往表里插入行时FIREFOX支持，IE不支持<br>解决办法：把行插入到TBODY中，不要直接插入到表<br>解决方法： </p>
-<p>//向table追加一个空行： </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> row = otable.insertRow(<span class="number">-1</span>); </div><div class="line"><span class="keyword">var</span> cell = <span class="built_in">document</span>.createElement(<span class="string">"td"</span>); </div><div class="line">cell.innerHTML = <span class="string">""</span>; </div><div class="line">cell.className = <span class="string">"XXXX"</span>; </div><div class="line">row.appendChild(cell);</div></pre></td></tr></table></figure>
-<p>[注] 建议使用JS框架集来操作table，如JQuery。  </p>
-<h2 id="十九、对象宽高赋值问题"><a href="#十九、对象宽高赋值问题" class="headerlink" title="十九、对象宽高赋值问题"></a>十九、对象宽高赋值问题</h2><p>问题说明：FireFox中类似 obj.style.height = imgObj.height 的语句无效。<br>解决方法：统一使用 obj.style.height = imgObj.height + ‘px’; </p>
-<h2 id="二十、setAttribute-‘style’-’color-red-’"><a href="#二十、setAttribute-‘style’-’color-red-’" class="headerlink" title="二十、setAttribute(‘style’,’color:red;’)"></a>二十、setAttribute(‘style’,’color:red;’)</h2><p>FIREFOX支持(除了IE，现在所有浏览器都支持)，IE不支持<br>解决办法：不用setAttribute(‘style’,’color:red’)<br>而用object.style.cssText = ‘color:red;’(这写法也有例外)<br>最好的办法是上面种方法都用上，万无一失 </p>
-<h2 id="二十一、类名设置"><a href="#二十一、类名设置" class="headerlink" title="二十一、类名设置"></a>二十一、类名设置</h2><p>setAttribute(‘class’,’styleClass’)<br>FIREFOX支持，IE不支持(指定属性名为class，IE不会设置元素的class属性，相反只使用setAttribute时IE自动识CLASSNAME属性)<br>解决办法：<br>setAttribute(‘class’,’styleClass’) </p>
-<p>setAttribute(‘className’,’styleClass’) </p>
-<p>或者直接 object.className=’styleClass’; </p>
-<p>IE和FF都支持object.className。 </p>
-<h2 id="二十二、用setAttribute设置事件"><a href="#二十二、用setAttribute设置事件" class="headerlink" title="二十二、用setAttribute设置事件"></a>二十二、用setAttribute设置事件</h2><p>var obj = document.getElementById(‘objId’);<br>obj.setAttribute(‘onclick’,’funcitonname();’);<br>FIREFOX支持，IE不支持<br>解决办法：<br>IE中必须用点记法来引用所需的事件处理程序,并且要用赋予匿名函数<br>如下：<br>var obj = document.getElementById(‘objId’);<br>obj.onclick=function(){fucntionname();};<br>这种方法所有浏览器都支持 </p>
-<h2 id="二十三、建立单选钮"><a href="#二十三、建立单选钮" class="headerlink" title="二十三、建立单选钮"></a>二十三、建立单选钮</h2><p>IE以外的浏览器<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> rdo = <span class="built_in">document</span>.createElement(<span class="string">'input'</span>); </div><div class="line">rdo.setAttribute(<span class="string">'type'</span>,<span class="string">'radio'</span>); </div><div class="line">rdo.setAttribute(<span class="string">'name'</span>,<span class="string">'radiobtn'</span>); </div><div class="line">rdo.setAttribute(<span class="string">'value'</span>,<span class="string">'checked'</span>);</div></pre></td></tr></table></figure></p>
-<p>IE:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> rdo =<span class="built_in">document</span>.createElement(”&lt;input name=”radiobtn” type=”radio” value=”checked” /&gt;”);</div></pre></td></tr></table></figure></p>
-<p>解决办法：<br>这一点区别和前面的都不一样。这次完全不同，所以找不到共同的办法来解决，那么只有IF-ELSE了<br>万幸的是，IE可以识别出document的uniqueID属性，别的浏览器都不可以识别出这一属性。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
     </div>
 
       
