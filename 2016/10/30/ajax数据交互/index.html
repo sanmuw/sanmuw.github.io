@@ -15,7 +15,7 @@
 什么是同步交互比如我们用户登录，我们输入用户名，密码之后，点击登陆发送一个请求给服务器，服务器接收到请求之后，会对请求进行处理，这个处理需要一个过程，在处理的过程当中，客户端一直处于等待的状态，如果服务器处理完毕，将处理结果返回给浏览器（一般返">
 <meta property="og:image" content="http://yoursite.com/images/简单ajax.png">
 <meta property="og:image" content="http://yoursite.com/images/xml.png">
-<meta property="og:updated_time" content="2016-11-04T03:28:43.410Z">
+<meta property="og:updated_time" content="2016-11-04T03:45:03.100Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ajax数据交互">
 <meta name="twitter:description" content="概念我记得W3C是这么说的：AJAX 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。（其实我更喜欢使用angular中的SPA来做这个。）
@@ -408,8 +408,9 @@ xhr.responseText、xhr.responseXML都表示响应主体
           }
       }  
 </code></pre><h2 id="jQuery-中的Ajax"><a href="#jQuery-中的Ajax" class="headerlink" title="jQuery 中的Ajax"></a>jQuery 中的Ajax</h2><p>   开发中谁还会去写原生ajax？jQuery为我们提供了更强大的Ajax封装</p>
-<p>   $.ajax({}) 可配置方式发起Ajax请求<br>   $.get() 以GET方式发起Ajax请求<br>   $.post() 以POST方式发起Ajax请求<br>   $(‘form’).serialize() 序列化表单（即格式化key=val&amp;key=val）<br>   url 接口地址<br>   type 请求方式<br>   timeout 请求超时<br>   dataType 服务器返回格式<br>   data 发送请求数据<br>   beforeSend: function () {} 请求发起前调用<br>   success 成功响应后调用<br>   error 错误响应时调用<br>   complete 响应完成时调用（包括成功和失败） </p>
-
+<p>   $.ajax({}) 可配置方式发起Ajax请求<br>   $.get() 以GET方式发起Ajax请求<br>   $.post() 以POST方式发起Ajax请求<br>   $(‘form’).serialize() 序列化表单（即格式化key=val&amp;key=val）<br>   url 接口地址<br>   type 请求方式<br>   timeout 请求超时<br>   dataType 服务器返回格式<br>   data 发送请求数据<br>   dataFilter 在请求成功之后调用。传入返回的数据以及 “dataType” 参数的值。并且必须返回新的数据（可能是处理过的）传递给 success 回调函数。<br>   beforeSend: function () {} 请求发起前调用<br>   success 成功响应后调用<br>   error 错误响应时调用<br>   complete 响应完成时调用（包括成功和失败） </p>
+<h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><pre><code>如果要处理$.ajax()得到的数据，则需要使用回调函数：beforeSend、error、dataFilter、success、complete。
+</code></pre>
       
     </div>
     
@@ -420,7 +421,7 @@ xhr.responseText、xhr.responseXML都表示响应主体
         <p><span>本文标题:</span><a href="/2016/10/30/ajax数据交互/">ajax数据交互</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 三木 的个人博客">三木</a></p>
         <p><span>发布时间:</span>2016年10月30日 - 20时32分</p>
-        <p><span>最后更新:</span>2016年11月04日 - 11时28分</p>
+        <p><span>最后更新:</span>2016年11月04日 - 11时45分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/10/30/ajax数据交互/" title="ajax数据交互">http://yoursite.com/2016/10/30/ajax数据交互/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/10/30/ajax数据交互/　　作者: 三木" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -449,7 +450,7 @@ xhr.responseText、xhr.responseXML都表示响应主体
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概念"><span class="toc-number">1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是同步交互"><span class="toc-number">2.</span> <span class="toc-text">什么是同步交互</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是异步交互"><span class="toc-number">3.</span> <span class="toc-text">什么是异步交互</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax"><span class="toc-number">4.</span> <span class="toc-text">ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#API详解"><span class="toc-number">4.1.</span> <span class="toc-text">API详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例"><span class="toc-number">4.2.</span> <span class="toc-text">案例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery-中的Ajax"><span class="toc-number">5.</span> <span class="toc-text">jQuery 中的Ajax</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概念"><span class="toc-number">1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是同步交互"><span class="toc-number">2.</span> <span class="toc-text">什么是同步交互</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是异步交互"><span class="toc-number">3.</span> <span class="toc-text">什么是异步交互</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax"><span class="toc-number">4.</span> <span class="toc-text">ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#API详解"><span class="toc-number">4.1.</span> <span class="toc-text">API详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例"><span class="toc-number">4.2.</span> <span class="toc-text">案例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery-中的Ajax"><span class="toc-number">5.</span> <span class="toc-text">jQuery 中的Ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#回调函数"><span class="toc-number">5.1.</span> <span class="toc-text">回调函数</span></a></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 

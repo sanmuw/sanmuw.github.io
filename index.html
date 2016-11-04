@@ -392,8 +392,9 @@ xhr.responseText、xhr.responseXML都表示响应主体
           }
       }  
 </code></pre><h2 id="jQuery-中的Ajax"><a href="#jQuery-中的Ajax" class="headerlink" title="jQuery 中的Ajax"></a>jQuery 中的Ajax</h2><p>   开发中谁还会去写原生ajax？jQuery为我们提供了更强大的Ajax封装</p>
-<p>   $.ajax({}) 可配置方式发起Ajax请求<br>   $.get() 以GET方式发起Ajax请求<br>   $.post() 以POST方式发起Ajax请求<br>   $(‘form’).serialize() 序列化表单（即格式化key=val&amp;key=val）<br>   url 接口地址<br>   type 请求方式<br>   timeout 请求超时<br>   dataType 服务器返回格式<br>   data 发送请求数据<br>   beforeSend: function () {} 请求发起前调用<br>   success 成功响应后调用<br>   error 错误响应时调用<br>   complete 响应完成时调用（包括成功和失败） </p>
-
+<p>   $.ajax({}) 可配置方式发起Ajax请求<br>   $.get() 以GET方式发起Ajax请求<br>   $.post() 以POST方式发起Ajax请求<br>   $(‘form’).serialize() 序列化表单（即格式化key=val&amp;key=val）<br>   url 接口地址<br>   type 请求方式<br>   timeout 请求超时<br>   dataType 服务器返回格式<br>   data 发送请求数据<br>   dataFilter 在请求成功之后调用。传入返回的数据以及 “dataType” 参数的值。并且必须返回新的数据（可能是处理过的）传递给 success 回调函数。<br>   beforeSend: function () {} 请求发起前调用<br>   success 成功响应后调用<br>   error 错误响应时调用<br>   complete 响应完成时调用（包括成功和失败） </p>
+<h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><pre><code>如果要处理$.ajax()得到的数据，则需要使用回调函数：beforeSend、error、dataFilter、success、complete。
+</code></pre>
       
     </div>
     
