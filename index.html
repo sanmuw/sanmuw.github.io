@@ -328,9 +328,7 @@
               <h1 id="javascript的兼容性问题处理（借鉴来的，这篇文章的网上也可以查到）"><a href="#javascript的兼容性问题处理（借鉴来的，这篇文章的网上也可以查到）" class="headerlink" title="javascript的兼容性问题处理（借鉴来的，这篇文章的网上也可以查到）"></a>javascript的兼容性问题处理（借鉴来的，这篇文章的网上也可以查到）</h1><p>文章原网址：<a href="http://www.jb51.net/article/21483.htm">http://www.jb51.net/article/21483.htm</a></p>
 <h2 id="一、document-formName-item-”itemName”-问题"><a href="#一、document-formName-item-”itemName”-问题" class="headerlink" title="一、document.formName.item(”itemName”) 问题"></a>一、document.formName.item(”itemName”) 问题</h2><p> 问题说明：IE下，可以使用 document.formName.item(”itemName”) 或 document.formName.elements [“elementName”]；Firefox 下，只能使用document.formName.elements[“elementName”]。<br>解决方法：统一使用document.formName.elements[“elementName”]。 </p>
 <h2 id="二、集合类对象问题"><a href="#二、集合类对象问题" class="headerlink" title="二、集合类对象问题"></a>二、集合类对象问题</h2><p>问题说明：IE下，可以使用（）和[]获取集合类对象；Firefox下，只能使用[]获取集合类对象。<br>解决方法：统一使用[]获取集合类对象</p>
-<h2 id="三、自定义属性问题"><a href="#三、自定义属性问题" class="headerlink" title="三、自定义属性问题"></a>三、自定义属性问题</h2><p>问题说明：IE下，可以使用获取常规属性的方法来获取自定义属性，也可以使用 getAttribute() 获取自定义属性；Firefox下，只能使用 getAttribute() 获取自定义属性。<br>解决方法：统一通过 getAttribute() 获取自定义属性。</p>
-<h2 id="四、eval-”idName”-问题"><a href="#四、eval-”idName”-问题" class="headerlink" title="四、eval(”idName”)问题"></a>四、eval(”idName”)问题</h2><p>问题说明：IE下，可以使用 eval(”idName”) 或 getElementById(”idName”) 来取得 id 为 idName 的HTML对象；Firefox下，只能使用 getElementById(”idName”) 来取得 id 为 idName 的HTML对象。<br>解决方法：统一使用getElementById（”idName”）来取得id为idName的HTML对象</p>
-<h2 id="五、变量名与其HTML对象ID相同的问题"><a href="#五、变量名与其HTML对象ID相同的问题" class="headerlink" title="五、变量名与其HTML对象ID相同的问题"></a>五、变量名与其HTML对象ID相同的问题</h2><p>问题说明：IE下，HTML对象的ID可以作为 document 的下属对象变量名直接使用，Firefox下则不能；Firefox下，可以使用与HTML对象ID相同的变量名，IE下则不能。<br>解决方法：使用 document.getElementById(”idName”) 代替 document.idName。最好不要取HTML对象ID相同的变量名，以减少错误；在声明变量时，一律加上var关键字，以避免歧义。</p>
+<h2 id="三、自定义属性问题"><a href="#三、自定义属性问题" class="headerlink" title="三、自定义属性问题"></a>三、自定义属性问题</h2><p>问题说明：IE下，可以使用获取常规属性的方法来获取自定义属性，也可以使用 getAttribute() 获取自定义属性；Firefox下，只能使用 getAttribute() 获取自定义属性。<br>解决方法：统一通过 getAttribute() 获取自定义属性。<br>
           
       
     </div>
@@ -392,9 +390,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="number">1.</span> 不传递参数的情况</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">a,b,c</span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="keyword">this</span>);</div><div class="line">        <span class="built_in">console</span>.log(a,b,c)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============call()============'</span>)</div><div class="line">    <span class="built_in">console</span>.log(foo.call())</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============call()============'</span>)</div><div class="line">    call 会让函数执行</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============apply()============'</span>)</div><div class="line">    <span class="built_in">console</span>.log(foo.apply())</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============apply()============'</span>)</div><div class="line">    apply 会让函数执行</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============bind()============'</span>)</div><div class="line">    <span class="built_in">console</span>.log(foo.bind())</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============bind()============'</span>)</div><div class="line">    bind 不会执行这个函数，会复制函数</div><div class="line"></div><div class="line">&lt;!--more--&gt;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo1</span> (<span class="params">a,b,c</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>)</div><div class="line">        <span class="built_in">console</span>.log(a,b,c)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============call(new Date())============'</span>)</div><div class="line">    <span class="built_in">console</span>.log(foo.call(<span class="keyword">new</span> <span class="built_in">Date</span>()))</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============call(new Date())============'</span>)</div><div class="line">    call 调用并改变函数执行时<span class="keyword">this</span>指向</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============apply(new Date())============'</span>)</div><div class="line">    <span class="built_in">console</span>.log(foo.apply(<span class="keyword">new</span> <span class="built_in">Date</span>()))</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============apply(new Date())============'</span>)</div><div class="line">    apply 调用并改变函数执行时<span class="keyword">this</span>指向</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============bind(new Date())============'</span>)</div><div class="line">    <span class="built_in">console</span>.log(  foo.bind(<span class="keyword">new</span> <span class="built_in">Date</span>())())</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============bind(new Date())============'</span>)</div><div class="line">    bind 只是改变<span class="keyword">this</span>  ！！！！不会立即执行！！！！</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo2</span> (<span class="params">a,b,c</span>)</span>&#123;</div><div class="line">        connsole.log(a,b,c)</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============call(null)============'</span>)</div><div class="line">    <span class="built_in">console</span>.log(foo.call(<span class="literal">null</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>))   <span class="comment">// =&gt;   foo.call(null, 1, 2, 3)</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============call(null)============'</span>)</div><div class="line">    call 调用并改变函数执行时<span class="keyword">this</span>指向，并通过后续的参数指定函数调用时的实参</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============apply(null)============'</span>)</div><div class="line">    <span class="built_in">console</span>.log(foo.apply(<span class="literal">null</span>, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]))</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============apply(null)============'</span>)</div><div class="line">    apply 调用并改变函数执行时<span class="keyword">this</span>指向，并将第二参数（必须是数组！！！）作为实参传入</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============bind(null)============'</span>)</div><div class="line">    <span class="built_in">console</span>.log(foo.bind(<span class="literal">null</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>))</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'============bind(null)============'</span>)</div><div class="line">    bind 只是改变<span class="keyword">this</span> !!!!!不会立即执行!!!!! 如果需要指定调用时的实参可以参考call</div></pre></td></tr></table></figure>
-<p>总结：apply 、call 二者而言，作用完全一样，只是接受参数的方式不同而已，call的传参方式是一个个传的，而apply是以数组的形式从传参的,bind是在ES5中扩展的（IE6,7,8不支持），它是改变上下文的this指向。它跟call很相似。bind的返回值是函数，它的第二个以及以后的参数加上绑定函数运行时本身的参数按照顺序作为原函数的参数来调用原函数。</p>
-
+              <h2 id="call、apply-和-bind-的区别"><a href="#call、apply-和-bind-的区别" class="headerlink" title="call、apply 和 bind 的区别"></a>call、apply 和 bind 的区别</h2><ol>
+<li><p>不传递参数的情况<br> function foo(a,b,c){</p>
+<pre><code>console.log(typeof this);
+console.log(a,b,c)
+</code></pre><p> }</p>
+<p> console.log(‘============call()============’)<br> console.log(foo.call())<br> console.log(‘============call()============’)<br> call 会让函数执行</p>
+<p> console.log(‘============apply()============’)<br> console.log(foo.apply())<br> console.log(‘============apply()============’)<br> apply 会让函数执行</p>
+<p> console.log(‘============bind()============’)<br> console.log(foo.bind())<br> console.log(‘============bind()============’)<br> bind 不会执行这个函数，会复制函数</p>
+          
       
     </div>
     
@@ -407,6 +411,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/10/28/之间的区别。/#more">大航海 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -451,7 +459,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="最近身边有朋友对于MVC和MVVM有点疑问。我来写下我的理解"><a href="#最近身边有朋友对于MVC和MVVM有点疑问。我来写下我的理解" class="headerlink" title="最近身边有朋友对于MVC和MVVM有点疑问。我来写下我的理解"></a>最近身边有朋友对于MVC和MVVM有点疑问。我来写下我的理解</h2><h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p>模式的意思是分三个部分的</p>
+              <h2 id="最近身边有朋友对于MVC和MVVM有点疑问。我来写下我的理解"><a href="#最近身边有朋友对于MVC和MVVM有点疑问。我来写下我的理解" class="headerlink" title="最近身边有朋友对于MVC和MVVM有点疑问。我来写下我的理解"></a>最近身边有朋友对于MVC和MVVM有点疑问。我来写下我的理解</h2><h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p>模式的意思是分三个部分的</p>
 <ul>
 <li>视图（View）：用户界面</li>
 <li>控制器（Controller）：业务逻辑</li>
@@ -463,36 +471,8 @@
 2. Controller 完成业务逻辑后，要求 Model 改变状态
 
 3. Model 将新的数据发送到 View，用户得到反馈
-
-&lt;!--more--&gt;
-</code></pre><p>所有通信都是单向的。</p>
-<h2 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h2><p>MVVM 模式将 Controller 改名为 ViewModel，基本上与 MVP 模式完全一致。   图如下</p>
-<p><img src="images/jiejian.png" alt="通信方式"></p>
-<p>唯一的区别是，它采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel，反之亦然。Angular 和 Ember 都采用这种模式。</p>
-<h3 id="MVVM模式主要分为四部分"><a href="#MVVM模式主要分为四部分" class="headerlink" title="MVVM模式主要分为四部分"></a>MVVM模式主要分为四部分</h3><p><img src="images/jieshitu.png" alt="通信方式"></p>
-<pre><code>1. View：它专注于界面的显示和渲染，在angular中则是包含一堆声明式Directive的视图模板。
-
-2. ViewModel：它是View和Model的粘合体，负责View和Model的交互和协作，它负责给View提供显示的数据，以及提供了View中Command事件操作Model的途径；在angular中$scope对象充当了这个ViewModel的角色；
-
-3. Model：它是与应用程序的业务逻辑相关的数据的封装载体，它是业务领域的对象，Model并不关心会被如何显示或操作，所以模型也不会包含任何界面显示相关的逻辑。在web页面中，大部分Model都是来自Ajax的服务端返回数据或者是全局的配置对象；而angular中的service则是封装和处理这些与Model相关的业务逻辑的场所，这类的业务服务是可以被多个Controller或者其他service复用的领域服务。
-
-4. Controller：这并不是MVVM模式的核心元素，但它负责ViewModel对象的初始化，它将组合一个或者多个service来获取业务领域Model放在ViewModel对象上，使得应用界面在启动加载的时候达到一种可用的状态。
-</code></pre><p>   View不能直接与Model交互，而是通过$scope这个ViewModel来实现与Model的交互。对于界面表单的交互，通过ngModel指令来实现View和ViewModel的同步。ngModelController包含$parsers和$formatters两个转换器管道，它们分别实现View表单输入值到Model数据类型转换和Model数据到View表单数据的格式化。对于用户界面的交互Command事件（如ngClick、ngChange等）则会转发到ViewModel对象上，通过ViewModel来实现对于Model的改变。然而对于Model的任何改变，也会反应在ViewModel之上，并且会通过$scope的“脏检查机制”（$digest）来更新到View。从而实现View和Model的分离，达到对前端逻辑MVVM的分层架构。</p>
-<ul>
-<li><p>MVVM 的优点</p>
-<ul>
-<li><p>低耦合：View可以独立于Model变化和修改，同一个ViewModel可以被多个View复用；并且可以做到View和Model的变化互不影响；</p>
-</li>
-<li><p>可重用性：可以把一些视图的逻辑放在ViewModel，让多个View复用；</p>
-</li>
-<li><p>独立开发：开发人员可以专注与业务逻辑和数据的开发（ViewModel），界面设计人员可以专注于UI(View)的设计；</p>
-</li>
-<li><p>可测试性：清晰的View分层，使得针对表现层业务逻辑的测试更容易，更简单。</p>
-</li>
-</ul>
-</li>
-</ul>
-
+</code></pre>
+          
       
     </div>
     
@@ -505,6 +485,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/10/27/mvc-和-mvvm-的区别/#more">大航海 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
