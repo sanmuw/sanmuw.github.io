@@ -15,7 +15,7 @@
 什么是同步交互比如我们用户登录，我们输入用户名，密码之后，点击登陆发送一个请求给服务器，服务器接收到请求之后，会对请求进行处理，这个处理需要一个过程，在处理的过程当中，客户端一直处于等待的状态，如果服务器处理完毕，将处理结果返回给浏览器（一般返">
 <meta property="og:image" content="http://yoursite.com/images/简单ajax.png">
 <meta property="og:image" content="http://yoursite.com/images/xml.png">
-<meta property="og:updated_time" content="2016-11-04T03:45:03.100Z">
+<meta property="og:updated_time" content="2016-11-05T02:56:34.742Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ajax数据交互">
 <meta name="twitter:description" content="概念我记得W3C是这么说的：AJAX 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。（其实我更喜欢使用angular中的SPA来做这个。）
@@ -279,7 +279,8 @@
         <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><pre><code>我记得W3C是这么说的：AJAX 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。（其实我更喜欢使用angular中的SPA来做这个。）
 </code></pre><h2 id="什么是同步交互"><a href="#什么是同步交互" class="headerlink" title="什么是同步交互"></a>什么是同步交互</h2><pre><code>比如我们用户登录，我们输入用户名，密码之后，点击登陆发送一个请求给服务器，服务器接收到请求之后，会对请求进行处理，这个处理需要一个过程，在处理的过程当中，客户端一直处于等待的状态，如果服务器处理完毕，将处理结果返回给浏览器（一般返回的是一个页面），返回的结果会把之前的登陆页面直接覆盖掉，我们说这种交互方式，就是同步的交互方式。
 </code></pre><h2 id="什么是异步交互"><a href="#什么是异步交互" class="headerlink" title="什么是异步交互"></a>什么是异步交互</h2><pre><code>比如我们用户注册，当我们输入用户名之后，随着界面会给我们提示，该用户名是否存在，在这样的一个过程当中，我们实际上是已经跟服务器进行交互了的，否则怎么会提示该用户已经存在了勒。我们可以这么理解异步交互，与同步进行一个对比，异步交互时，当发送一个请求，服务器接收到请求之后，对请求进行处理，在处理的过程当中，用户还可以做其它的事情，当服务器处理请求完成之后，会给客户端一个响应，响应的数据不会覆盖原来的页面，这样我们就能给用户一个完好的用户体验，这个就是我们说的：页面不刷新，就可以能够与服务器进行动态的数据交互。在我们显示的开发过程当中，有很多这样的实际案例。
-</code></pre><h2 id="ajax"><a href="#ajax" class="headerlink" title="ajax"></a>ajax</h2><p><img src="images/简单ajax.png" alt="ajax">    </p>
+</code></pre><h2 id="ajax"><a href="#ajax" class="headerlink" title="ajax"></a>ajax</h2><a id="more"></a>
+<p><img src="images/简单ajax.png" alt="ajax">    </p>
 <pre><code>- 请求(HTTP请求3个组成部分与XMLHttpRequest方法的对应关系)
     1. 请求行
         xhr.open（&apos;get&apos;,&apos;index.php&apos;）;//Async = false,如需使用 async=false，请将 open() 方法中的第三个参数改为 false
@@ -421,7 +422,7 @@ xhr.responseText、xhr.responseXML都表示响应主体
         <p><span>本文标题:</span><a href="/2016/10/30/ajax数据交互/">ajax数据交互</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 三木 的个人博客">三木</a></p>
         <p><span>发布时间:</span>2016年10月30日 - 20时32分</p>
-        <p><span>最后更新:</span>2016年11月04日 - 11时45分</p>
+        <p><span>最后更新:</span>2016年11月05日 - 10时56分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/10/30/ajax数据交互/" title="ajax数据交互">http://yoursite.com/2016/10/30/ajax数据交互/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/10/30/ajax数据交互/　　作者: 三木" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
