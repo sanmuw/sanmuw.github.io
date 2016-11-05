@@ -115,11 +115,9 @@
                         
                             <li><a href="/sanmuw.github.io/#">博客首页</a></li>
                         
-                            <li><a href="/works">作品展示</a></li>
+                            <li><a href="/#">作品展示</a></li>
                         
-                            <li><a href="/about">留言打卡</a></li>
-                        
-                            <li><a href="/../www.daqianduan.com/nav">前端导航</a></li>
+                            <li><a href="/#">留言打卡</a></li>
                         
                         </ul>
                     </nav>
@@ -149,7 +147,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a>
+                        <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/面向对象/" style="font-size: 20px;">面向对象</a>
                     </div>
                 </section>
                 
@@ -198,11 +196,9 @@
                 
                     <li><a href="/sanmuw.github.io/#">博客首页</a></li>
                 
-                    <li><a href="/works">作品展示</a></li>
+                    <li><a href="/#">作品展示</a></li>
                 
-                    <li><a href="/about">留言打卡</a></li>
-                
-                    <li><a href="/../www.daqianduan.com/nav">前端导航</a></li>
+                    <li><a href="/#">留言打卡</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -232,6 +228,74 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-闭包的理解" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/06/闭包的理解/" class="article-date">
+      <time datetime="2016-11-05T17:24:24.000Z" itemprop="datePublished">2016-11-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/06/闭包的理解/">闭包的理解</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <ul>
+<li>我认为要想知道什么是闭包，那就要先知道什么是变量的作用域！</li>
+</ul>
+<p>##　作用域<br>    －　全局变量<br>        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">        <span class="keyword">var</span> m = <span class="number">123</span> <span class="comment">//这样在全局定义的就是全局变量</span></div><div class="line">－　局部变量</div><div class="line">    <span class="string">``</span><span class="string">`javascript</div><div class="line">        function foo() &#123;</div><div class="line">            var m = 123; //这样在函数内部定义的变量就是局部变量，函数外部无法直接读取的</div><div class="line">        &#125;</span></div></pre></td></tr></table></figure></p>
+<pre><code>- 问题：如何在外部读取局部变量？
+    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> m = <span class="number">123</span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(m);<span class="comment">//123</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/11/06/闭包的理解/#more">大航海 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-ajax数据交互" class="article article-type-post" itemscope itemprop="blogPost">
   
