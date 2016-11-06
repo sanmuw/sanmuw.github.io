@@ -246,7 +246,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/06/闭包的理解/">闭包的理解</a>
+      <a class="article-title" href="/2016/11/06/闭包的理解/">闭包的理解(借鉴阮一峰的文章)</a>
     </h1>
   
 
@@ -259,9 +259,8 @@
               <ul>
 <li>我认为要想知道什么是闭包，那就要先知道什么是变量的作用域！</li>
 </ul>
-<p>##　作用域<br>    －　全局变量<br>        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">        <span class="keyword">var</span> m = <span class="number">123</span> <span class="comment">//这样在全局定义的就是全局变量</span></div><div class="line">－　局部变量</div><div class="line">    <span class="string">``</span><span class="string">`javascript</div><div class="line">        function foo() &#123;</div><div class="line">            var m = 123; //这样在函数内部定义的变量就是局部变量，函数外部无法直接读取的</div><div class="line">        &#125;</span></div></pre></td></tr></table></figure></p>
-<pre><code>- 问题：如何在外部读取局部变量？
-    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> m = <span class="number">123</span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(m);<span class="comment">//123</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><pre><code>－ 全局变量
+    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">        <span class="keyword">var</span> m = <span class="number">123</span> <span class="comment">//这样在全局定义的就是全局变量</span></div><div class="line">－ 局部变量</div><div class="line">    <span class="string">``</span><span class="string">`javascript</div><div class="line">        function foo() &#123;</div><div class="line">            var m = 123; //这样在函数内部定义的变量就是局部变量，函数外部无法直接读取的</div><div class="line">        &#125;</span></div></pre></td></tr></table></figure>
 </code></pre>
           
       
