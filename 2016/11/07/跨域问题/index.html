@@ -5,18 +5,18 @@
   
   <title>跨域问题 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="什么事跨域概念：只要协议、域名、端口有任何一个不同，都被当作是不同的域。
+  <meta name="description" content="什么是跨域概念：只要协议、域名、端口有任何一个不同，都被当作是不同的域。
 URL                      说明       是否允许通信http://www.a.com/a.jshttp://www.a.com/b.js     同一域名下   允许http://www.a.com/lab/a.jshttp://www.a.com/script/b.js 同一域名下不同文件夹 允">
 <meta property="og:type" content="article">
 <meta property="og:title" content="跨域问题">
 <meta property="og:url" content="http://yoursite.com/2016/11/07/跨域问题/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="什么事跨域概念：只要协议、域名、端口有任何一个不同，都被当作是不同的域。
+<meta property="og:description" content="什么是跨域概念：只要协议、域名、端口有任何一个不同，都被当作是不同的域。
 URL                      说明       是否允许通信http://www.a.com/a.jshttp://www.a.com/b.js     同一域名下   允许http://www.a.com/lab/a.jshttp://www.a.com/script/b.js 同一域名下不同文件夹 允">
-<meta property="og:updated_time" content="2016-11-08T16:42:49.119Z">
+<meta property="og:updated_time" content="2016-11-08T16:44:22.226Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="跨域问题">
-<meta name="twitter:description" content="什么事跨域概念：只要协议、域名、端口有任何一个不同，都被当作是不同的域。
+<meta name="twitter:description" content="什么是跨域概念：只要协议、域名、端口有任何一个不同，都被当作是不同的域。
 URL                      说明       是否允许通信http://www.a.com/a.jshttp://www.a.com/b.js     同一域名下   允许http://www.a.com/lab/a.jshttp://www.a.com/script/b.js 同一域名下不同文件夹 允">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -269,7 +269,7 @@ URL                      说明       是否允许通信http://www.a.com/a.jshtt
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="什么事跨域"><a href="#什么事跨域" class="headerlink" title="什么事跨域"></a>什么事跨域</h2><p>概念：只要协议、域名、端口有任何一个不同，都被当作是不同的域。</p>
+        <h2 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h2><p>概念：只要协议、域名、端口有任何一个不同，都被当作是不同的域。</p>
 <p>URL                      说明       是否允许通信<br><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a>     同一域名下   允许<br><a href="http://www.a.com/lab/a.js" target="_blank" rel="external">http://www.a.com/lab/a.js</a><br><a href="http://www.a.com/script/b.js" target="_blank" rel="external">http://www.a.com/script/b.js</a> 同一域名下不同文件夹 允许<br><a href="http://www.a.com:8000/a.js" target="_blank" rel="external">http://www.a.com:8000/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a>     同一域名，不同端口  不允许<br><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a><br><a href="https://www.a.com/b.js" target="_blank" rel="external">https://www.a.com/b.js</a> 同一域名，不同协议 不允许</p>
 <a id="more"></a>
 <p><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a><br><a href="http://70.32.92.74/b.js" target="_blank" rel="external">http://70.32.92.74/b.js</a> 域名和域名对应ip 不允许<br><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a><br><a href="http://script.a.com/b.js" target="_blank" rel="external">http://script.a.com/b.js</a> 主域相同，子域不同 不允许<br><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a><br><a href="http://a.com/b.js" target="_blank" rel="external">http://a.com/b.js</a> 同一域名，不同二级域名（同上） 不允许（cookie这种情况下也不允许访问）<br><a href="http://www.cnblogs.com/a.js" target="_blank" rel="external">http://www.cnblogs.com/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a> 不同域名 不允许    </p>
@@ -365,7 +365,7 @@ URL                      说明       是否允许通信http://www.a.com/a.jshtt
         <p><span>本文标题:</span><a href="/2016/11/07/跨域问题/">跨域问题</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 三木 的个人博客">三木</a></p>
         <p><span>发布时间:</span>2016年11月07日 - 18时39分</p>
-        <p><span>最后更新:</span>2016年11月09日 - 00时42分</p>
+        <p><span>最后更新:</span>2016年11月09日 - 00时44分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/11/07/跨域问题/" title="跨域问题">http://yoursite.com/2016/11/07/跨域问题/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/11/07/跨域问题/　　作者: 三木" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -394,7 +394,7 @@ URL                      说明       是否允许通信http://www.a.com/a.jshtt
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么事跨域"><span class="toc-number">1.</span> <span class="toc-text">什么事跨域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跨域资源共享（CORS）"><span class="toc-number">2.</span> <span class="toc-text">跨域资源共享（CORS）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跨域的方式"><span class="toc-number">3.</span> <span class="toc-text">跨域的方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#通过jsonp跨域"><span class="toc-number">3.1.</span> <span class="toc-text">通过jsonp跨域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通过修改document-domain来跨子域"><span class="toc-number">3.2.</span> <span class="toc-text">通过修改document.domain来跨子域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改document-domain的方法只适用于不同子域的框架间的交互。"><span class="toc-number">3.3.</span> <span class="toc-text">修改document.domain的方法只适用于不同子域的框架间的交互。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用HTML5的window-postMessage方法跨域"><span class="toc-number">3.4.</span> <span class="toc-text">使用HTML5的window.postMessage方法跨域</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是跨域"><span class="toc-number">1.</span> <span class="toc-text">什么是跨域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跨域资源共享（CORS）"><span class="toc-number">2.</span> <span class="toc-text">跨域资源共享（CORS）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跨域的方式"><span class="toc-number">3.</span> <span class="toc-text">跨域的方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#通过jsonp跨域"><span class="toc-number">3.1.</span> <span class="toc-text">通过jsonp跨域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通过修改document-domain来跨子域"><span class="toc-number">3.2.</span> <span class="toc-text">通过修改document.domain来跨子域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改document-domain的方法只适用于不同子域的框架间的交互。"><span class="toc-number">3.3.</span> <span class="toc-text">修改document.domain的方法只适用于不同子域的框架间的交互。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用HTML5的window-postMessage方法跨域"><span class="toc-number">3.4.</span> <span class="toc-text">使用HTML5的window.postMessage方法跨域</span></a></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
