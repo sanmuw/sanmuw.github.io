@@ -5,13 +5,19 @@
   
   <title>跨域问题 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="什么事跨域概念：只要协议、域名、端口有任何一个不同，都被当作是不同的域。
+URL                      说明       是否允许通信http://www.a.com/a.jshttp://www.a.com/b.js     同一域名下   允许http://www.a.com/lab/a.jshttp://www.a.com/script/b.js 同一域名下不同文件夹 允">
+<meta property="og:type" content="article">
 <meta property="og:title" content="跨域问题">
 <meta property="og:url" content="http://yoursite.com/2016/11/07/跨域问题/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:updated_time" content="2016-11-08T15:49:37.699Z">
+<meta property="og:description" content="什么事跨域概念：只要协议、域名、端口有任何一个不同，都被当作是不同的域。
+URL                      说明       是否允许通信http://www.a.com/a.jshttp://www.a.com/b.js     同一域名下   允许http://www.a.com/lab/a.jshttp://www.a.com/script/b.js 同一域名下不同文件夹 允">
+<meta property="og:updated_time" content="2016-11-08T16:39:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="跨域问题">
+<meta name="twitter:description" content="什么事跨域概念：只要协议、域名、端口有任何一个不同，都被当作是不同的域。
+URL                      说明       是否允许通信http://www.a.com/a.jshttp://www.a.com/b.js     同一域名下   允许http://www.a.com/lab/a.jshttp://www.a.com/script/b.js 同一域名下不同文件夹 允">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -145,7 +151,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/ajax-跨域/" style="font-size: 10px;">ajax 跨域</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/面向对象/" style="font-size: 20px;">面向对象</a>
+                        <a href="/tags/ajax/" style="font-size: 20px;">ajax</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/面向对象/" style="font-size: 20px;">面向对象</a>
                     </div>
                 </section>
                 
@@ -253,7 +259,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax-跨域/">ajax 跨域</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax/">ajax</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -263,7 +269,92 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <h2 id="什么事跨域"><a href="#什么事跨域" class="headerlink" title="什么事跨域"></a>什么事跨域</h2><p>概念：只要协议、域名、端口有任何一个不同，都被当作是不同的域。</p>
+<p>URL                      说明       是否允许通信<br><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a>     同一域名下   允许<br><a href="http://www.a.com/lab/a.js" target="_blank" rel="external">http://www.a.com/lab/a.js</a><br><a href="http://www.a.com/script/b.js" target="_blank" rel="external">http://www.a.com/script/b.js</a> 同一域名下不同文件夹 允许<br><a href="http://www.a.com:8000/a.js" target="_blank" rel="external">http://www.a.com:8000/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a>     同一域名，不同端口  不允许<br><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a><br><a href="https://www.a.com/b.js" target="_blank" rel="external">https://www.a.com/b.js</a> 同一域名，不同协议 不允许</p>
+<!---->
+<p><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a><br><a href="http://70.32.92.74/b.js" target="_blank" rel="external">http://70.32.92.74/b.js</a> 域名和域名对应ip 不允许<br><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a><br><a href="http://script.a.com/b.js" target="_blank" rel="external">http://script.a.com/b.js</a> 主域相同，子域不同 不允许<br><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a><br><a href="http://a.com/b.js" target="_blank" rel="external">http://a.com/b.js</a> 同一域名，不同二级域名（同上） 不允许（cookie这种情况下也不允许访问）<br><a href="http://www.cnblogs.com/a.js" target="_blank" rel="external">http://www.cnblogs.com/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a> 不同域名 不允许    </p>
+<p>对于端口和协议的不同，只能通过后台来解决。</p>
+<h2 id="跨域资源共享（CORS）"><a href="#跨域资源共享（CORS）" class="headerlink" title="跨域资源共享（CORS）"></a>跨域资源共享（CORS）</h2><p>CORS（Cross-Origin Resource Sharing）跨域资源共享，定义了必须在访问跨域资源时，浏览器与服务器应该如何沟通。CORS背后的基本思想就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。</p>
+<script type="text/javascript">
+    var xhr = new XMLHttpRequest();
+    xhr.open("￼GET", "/trigkit4",true);
+    xhr.send();
+</script>
+
+<p>以上是相对路径，如果我们要使用CORS，相关Ajax代码如下所示：</p>
+<script type="text/javascript">
+    var xhr = new XMLHttpRequest();
+    xhr.open("￼GET", "http://segmentfault.com/u/trigkit4/",true);
+    xhr.send();
+</script>
+
+<p>代码与之前的区别就在于相对路径换成了其他域的绝对路径，也就是你要跨域访问的接口地址。</p>
+<p>服务器端对于CORS的支持，主要就是通过设置Access-Control-Allow-Origin来进行的。如果浏览器检测到相应的设置，就可以允许Ajax进行跨域的访问。</p>
+<h2 id="跨域的方式"><a href="#跨域的方式" class="headerlink" title="跨域的方式"></a>跨域的方式</h2><h3 id="通过jsonp跨域"><a href="#通过jsonp跨域" class="headerlink" title="通过jsonp跨域"></a>通过jsonp跨域</h3><p>现在问题来了？什么是jsonp？维基百科的定义是：JSONP（JSON with Padding）是资料格式 JSON 的一种“使用模式”，可以让网页从别的网域要资料。</p>
+<p>JSONP也叫填充式JSON，是应用JSON的一种新方法，只不过是被包含在函数调用中的JSON，例如：</p>
+<p>callback({“name”,”trigkit4”});</p>
+<p>JSONP由两部分组成：回调函数和数据。回调函数是当响应到来时应该在页面中调用的函数，而数据就是传入回调函数中的JSON数据。</p>
+<p>在js中，我们直接用XMLHttpRequest请求不同域上的数据时，是不可以的。但是，在页面上引入不同域上的js脚本文件却是可以的，jsonp正是利用这个特性来实现的。 例如：</p>
+<script type="text/javascript">
+    function dosomething(jsondata){
+        //处理获得的json数据
+    }
+</script>
+<script src="http://example.com/data.php?callback=dosomething"></script>
+
+<p>js文件载入成功后会执行我们在url参数中指定的函数，并且会把我们需要的json数据作为参数传入。所以jsonp是需要服务器端的页面进行相应的配合的。</p>
+<p>&lt;?php<br>$callback = $_GET[‘callback’];//得到回调函数名<br>$data = array(‘a’,’b’,’c’);//要返回的数据<br>echo $callback.’(‘.json_encode($data).’)’;//输出<br>?&gt;</p>
+<p>最终，输出结果为：dosomething([‘a’,’b’,’c’]);</p>
+<p>如果你的页面使用jquery，那么通过它封装的方法就能很方便的来进行jsonp操作了。</p>
+<script type="text/javascript">
+    $.getJSON('http://example.com/data.php?callback=?,function(jsondata)'){
+        //处理获得的json数据
+    });
+</script>
+
+<p>jquery会自动生成一个全局函数来替换callback=?中的问号，之后获取到数据后又会自动销毁，实际上就是起一个临时代理函数的作用。$.getJSON方法会自动判断是否跨域，不跨域的话，就调用普通的ajax方法；跨域的话，则会以异步加载js文件的形式来调用jsonp的回调函数。</p>
+<ul>
+<li><p>jsonp的优缺点</p>
+<p>1、 JSONP只能实现GET请求，而CORS支持所有类型的HTTP请求。</p>
+<p>2、 使用CORS，开发者可以使用普通的XMLHttpRequest发起请求和获得数据，比起JSONP有更好的错误处理。</p>
+<p>3、 JSONP主要被老的浏览器支持，它们往往不支持CORS，而绝大多数现代浏览器都已经支持了CORS）。</p>
+</li>
+</ul>
+<h3 id="通过修改document-domain来跨子域"><a href="#通过修改document-domain来跨子域" class="headerlink" title="通过修改document.domain来跨子域"></a>通过修改document.domain来跨子域</h3><p>浏览器都有一个同源策略，其限制之一就是第一种方法中我们说的不能通过ajax的方法去请求不同源中的文档。 它的第二个限制是浏览器中不同域的框架之间是不能进行js的交互操作的。</p>
+<p>不同的框架之间是可以获取window对象的，但却无法获取相应的属性和方法。比如，有一个页面，它的地址是<a href="http://www.example.com/a.html" target="_blank" rel="external">http://www.example.com/a.html</a> ， 在这个页面里面有一个iframe，它的src是<a href="http://example.com/b.html" target="_blank" rel="external">http://example.com/b.html</a>, 很显然，这个页面与它里面的iframe框架是不同域的，所以我们是无法通过在页面中书写js代码来获取iframe中的东西的：    </p>
+<script type="text/javascript">
+    function test(){
+        var iframe = document.getElementById('￼ifame');
+        var win = document.contentWindow;//可以获取到iframe里的window对象，但该window对象的属性和方法几乎是不可用的
+        var doc = win.document;//这里获取不到iframe里的document对象
+        var name = win.name;//这里同样获取不到window对象的name属性
+    }
+</script>
+<iframe id="iframe" src="http://example.com/b.html" onload="test()"></iframe>
+
+这个时候，document.domain就可以派上用场了，我们只要把http://www.example.com/a.html 和 http://example.com/b.html这两个页面的document.domain都设成相同的域名就可以了。但要注意的是，document.domain的设置是有限制的，我们只能把document.domain设置成自身或更高一级的父域，且主域必须相同。
+
+1.在页面 http://www.example.com/a.html 中设置document.domain:
+
+<iframe id="iframe" src="http://example.com/b.html" onload="test()"></iframe>
+<script type="text/javascript">
+    document.domain = 'example.com';//设置成主域
+    function test(){
+        alert(document.getElementById('￼iframe').contentWindow);//contentWindow 可取得子窗口的 window 对象
+    }
+</script>
+
+<p>在页面 <a href="http://example.com/b.html" target="_blank" rel="external">http://example.com/b.html</a> 中也设置document.domain:</p>
+<script type="text/javascript">
+    document.domain = 'example.com';//在iframe载入这个页面也设置document.domain，使之与主页面的document.domain相同
+</script>
+
+<p>修改document.domain的方法只适用于不同子域的框架间的交互。</p>
+<h3 id="修改document-domain的方法只适用于不同子域的框架间的交互。"><a href="#修改document-domain的方法只适用于不同子域的框架间的交互。" class="headerlink" title="修改document.domain的方法只适用于不同子域的框架间的交互。"></a>修改document.domain的方法只适用于不同子域的框架间的交互。</h3><p>window对象有个name属性，该属性有个特征：即在一个窗口(window)的生命周期内,窗口载入的所有的页面都是共享一个window.name的，每个页面对window.name都有读写的权限，window.name是持久存在一个窗口载入过的所有页面中的</p>
+<h3 id="使用HTML5的window-postMessage方法跨域"><a href="#使用HTML5的window-postMessage方法跨域" class="headerlink" title="使用HTML5的window.postMessage方法跨域"></a>使用HTML5的window.postMessage方法跨域</h3><p>window.postMessage(message,targetOrigin) 方法是html5新引进的特性，可以使用它来向其它的window对象发送消息，无论这个window对象是属于同源或不同源，目前IE8+、FireFox、Chrome、Opera等浏览器都已经支持window.postMessage方法。</p>
+<p>友情链接1：<a href="http://blog.csdn.net/joyhen/article/details/21631833" target="_blank" rel="external">http://blog.csdn.net/joyhen/article/details/21631833</a></p>
+<p>友情链接2：<a href="https://segmentfault.com/a/1190000000718840" target="_blank" rel="external">https://segmentfault.com/a/1190000000718840</a></p>
+
       
     </div>
     
@@ -274,7 +365,7 @@
         <p><span>本文标题:</span><a href="/2016/11/07/跨域问题/">跨域问题</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 三木 的个人博客">三木</a></p>
         <p><span>发布时间:</span>2016年11月07日 - 18时39分</p>
-        <p><span>最后更新:</span>2016年11月08日 - 23时49分</p>
+        <p><span>最后更新:</span>2016年11月09日 - 00时39分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/11/07/跨域问题/" title="跨域问题">http://yoursite.com/2016/11/07/跨域问题/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/11/07/跨域问题/　　作者: 三木" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -303,7 +394,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么事跨域"><span class="toc-number">1.</span> <span class="toc-text">什么事跨域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跨域资源共享（CORS）"><span class="toc-number">2.</span> <span class="toc-text">跨域资源共享（CORS）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#跨域的方式"><span class="toc-number">3.</span> <span class="toc-text">跨域的方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#通过jsonp跨域"><span class="toc-number">3.1.</span> <span class="toc-text">通过jsonp跨域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通过修改document-domain来跨子域"><span class="toc-number">3.2.</span> <span class="toc-text">通过修改document.domain来跨子域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改document-domain的方法只适用于不同子域的框架间的交互。"><span class="toc-number">3.3.</span> <span class="toc-text">修改document.domain的方法只适用于不同子域的框架间的交互。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用HTML5的window-postMessage方法跨域"><span class="toc-number">3.4.</span> <span class="toc-text">使用HTML5的window.postMessage方法跨域</span></a></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
