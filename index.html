@@ -147,7 +147,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/ajax/" style="font-size: 20px;">ajax</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/面向对象/" style="font-size: 20px;">面向对象</a>
+                        <a href="/tags/ajax/" style="font-size: 15px;">ajax</a> <a href="/tags/angular/" style="font-size: 10px;">angular</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/面向对象/" style="font-size: 15px;">面向对象</a>
                     </div>
                 </section>
                 
@@ -690,6 +690,80 @@ console.log(a,b,c)
       
         <p class="article-more-link">
           <a  href="/2014/06/23/ajax数据交互/#more">大航海 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-jquery中prop-方法和attr-方法的区别" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/06/11/jquery中prop-方法和attr-方法的区别/" class="article-date">
+      <time datetime="2014-06-10T16:26:09.000Z" itemprop="datePublished">2014-06-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/06/11/jquery中prop-方法和attr-方法的区别/">jquery中prop()方法和attr()方法的区别</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="基本使用方法"><a href="#基本使用方法" class="headerlink" title="基本使用方法"></a>基本使用方法</h2><p>attr()的使用获取匹配的第一元素的一个属性值，或者是为所有匹配的元素进行属性赋值。</p>
+<p>支持的方法：<br>.attr(attributeName)</p>
+<pre><code>- 获取匹配到的第一个元素的一个属性值
+- 输入值attributeName
+- Type：String，需要获取的属性名称
+</code></pre><p>.attr()方法，只能获取匹配到的第一个元素的值，如果你想要获取匹配到的所有的元素的属性值，那么就需要借助jquery中的循环的方法，比如：.each()和.map();<br>使用jQuery的.attr()方法，获取元素的属性值有两个最重要的优势：</p>
+<ul>
+<li><p>使用简单，它可以直接对一个jQuery对象使用，并且使用过之后可以继续使用其他的jQuery方法。</p>
+</li>
+<li><p>跨浏览器兼容性，有些属性的获取方法在浏览器上不兼容的，甚至于有的在同一浏览器的不同版本之间，都会出现不兼容的问题，.attr()方法降低了这种不兼容性。</p>
+</li>
+</ul>
+<p>注：属性值是一个通常会返回一个字符串，偶尔也会返回类似价值或者数字顺序的值。</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2014/06/11/jquery中prop-方法和attr-方法的区别/#more">大航海 >></a>
         </p>
       
       <div class="clearfix"></div>

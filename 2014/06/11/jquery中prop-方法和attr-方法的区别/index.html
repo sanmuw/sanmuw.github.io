@@ -3,24 +3,35 @@
 <head>
   <meta charset="utf-8">
   
-  <title>ajax数据交互 | Hexo</title>
+  <title>jquery中prop()方法和attr()方法的区别 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="概念我记得W3C是这么说的：AJAX 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。（其实我更喜欢使用angular中的SPA来做这个。）
-什么是同步交互比如我们用户登录，我们输入用户名，密码之后，点击登陆发送一个请求给服务器，服务器接收到请求之后，会对请求进行处理，这个处理需要一个过程，在处理的过程当中，客户端一直处于等待的状态，如果服务器处理完毕，将处理结果返回给浏览器（一般返">
+  <meta name="description" content="基本使用方法attr()的使用获取匹配的第一元素的一个属性值，或者是为所有匹配的元素进行属性赋值。
+支持的方法：.attr(attributeName)
+- 获取匹配到的第一个元素的一个属性值
+- 输入值attributeName
+- Type：String，需要获取的属性名称
+.attr()方法，只能获取匹配到的第一个元素的值，如果你想要获取匹配到的所有的元素的属性值，那么就需要借助jquery">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ajax数据交互">
-<meta property="og:url" content="http://yoursite.com/2014/06/23/ajax数据交互/index.html">
+<meta property="og:title" content="jquery中prop()方法和attr()方法的区别">
+<meta property="og:url" content="http://yoursite.com/2014/06/11/jquery中prop-方法和attr-方法的区别/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="概念我记得W3C是这么说的：AJAX 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。（其实我更喜欢使用angular中的SPA来做这个。）
-什么是同步交互比如我们用户登录，我们输入用户名，密码之后，点击登陆发送一个请求给服务器，服务器接收到请求之后，会对请求进行处理，这个处理需要一个过程，在处理的过程当中，客户端一直处于等待的状态，如果服务器处理完毕，将处理结果返回给浏览器（一般返">
-<meta property="og:image" content="http://yoursite.com/images/简单ajax.png">
-<meta property="og:image" content="http://yoursite.com/images/xml.png">
-<meta property="og:updated_time" content="2016-11-08T16:46:01.851Z">
+<meta property="og:description" content="基本使用方法attr()的使用获取匹配的第一元素的一个属性值，或者是为所有匹配的元素进行属性赋值。
+支持的方法：.attr(attributeName)
+- 获取匹配到的第一个元素的一个属性值
+- 输入值attributeName
+- Type：String，需要获取的属性名称
+.attr()方法，只能获取匹配到的第一个元素的值，如果你想要获取匹配到的所有的元素的属性值，那么就需要借助jquery">
+<meta property="og:image" content="http://yoursite.com/images/attr-1.jpg">
+<meta property="og:updated_time" content="2016-11-10T17:18:58.076Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ajax数据交互">
-<meta name="twitter:description" content="概念我记得W3C是这么说的：AJAX 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。（其实我更喜欢使用angular中的SPA来做这个。）
-什么是同步交互比如我们用户登录，我们输入用户名，密码之后，点击登陆发送一个请求给服务器，服务器接收到请求之后，会对请求进行处理，这个处理需要一个过程，在处理的过程当中，客户端一直处于等待的状态，如果服务器处理完毕，将处理结果返回给浏览器（一般返">
-<meta name="twitter:image" content="http://yoursite.com/images/简单ajax.png">
+<meta name="twitter:title" content="jquery中prop()方法和attr()方法的区别">
+<meta name="twitter:description" content="基本使用方法attr()的使用获取匹配的第一元素的一个属性值，或者是为所有匹配的元素进行属性赋值。
+支持的方法：.attr(attributeName)
+- 获取匹配到的第一个元素的一个属性值
+- 输入值attributeName
+- Type：String，需要获取的属性名称
+.attr()方法，只能获取匹配到的第一个元素的值，如果你想要获取匹配到的所有的元素的属性值，那么就需要借助jquery">
+<meta name="twitter:image" content="http://yoursite.com/images/attr-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -234,11 +245,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-ajax数据交互" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-jquery中prop-方法和attr-方法的区别" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2014/06/23/ajax数据交互/" class="article-date">
-      <time datetime="2014-06-23T12:32:53.000Z" itemprop="datePublished">2014-06-23</time>
+      <a href="/2014/06/11/jquery中prop-方法和attr-方法的区别/" class="article-date">
+      <time datetime="2014-06-10T16:26:09.000Z" itemprop="datePublished">2014-06-11</time>
 </a>
     </div>
   
@@ -251,7 +262,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      ajax数据交互
+      jquery中prop()方法和attr()方法的区别
     </h1>
   
 
@@ -262,7 +273,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax/">ajax</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -272,142 +283,53 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><pre><code>我记得W3C是这么说的：AJAX 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。（其实我更喜欢使用angular中的SPA来做这个。）
-</code></pre><h2 id="什么是同步交互"><a href="#什么是同步交互" class="headerlink" title="什么是同步交互"></a>什么是同步交互</h2><pre><code>比如我们用户登录，我们输入用户名，密码之后，点击登陆发送一个请求给服务器，服务器接收到请求之后，会对请求进行处理，这个处理需要一个过程，在处理的过程当中，客户端一直处于等待的状态，如果服务器处理完毕，将处理结果返回给浏览器（一般返回的是一个页面），返回的结果会把之前的登陆页面直接覆盖掉，我们说这种交互方式，就是同步的交互方式。
-</code></pre><h2 id="什么是异步交互"><a href="#什么是异步交互" class="headerlink" title="什么是异步交互"></a>什么是异步交互</h2><pre><code>比如我们用户注册，当我们输入用户名之后，随着界面会给我们提示，该用户名是否存在，在这样的一个过程当中，我们实际上是已经跟服务器进行交互了的，否则怎么会提示该用户已经存在了勒。我们可以这么理解异步交互，与同步进行一个对比，异步交互时，当发送一个请求，服务器接收到请求之后，对请求进行处理，在处理的过程当中，用户还可以做其它的事情，当服务器处理请求完成之后，会给客户端一个响应，响应的数据不会覆盖原来的页面，这样我们就能给用户一个完好的用户体验，这个就是我们说的：页面不刷新，就可以能够与服务器进行动态的数据交互。在我们显示的开发过程当中，有很多这样的实际案例。
-</code></pre><h2 id="ajax"><a href="#ajax" class="headerlink" title="ajax"></a>ajax</h2><a id="more"></a>
-<p><img src="images/简单ajax.png" alt="ajax">    </p>
-<pre><code>- 请求(HTTP请求3个组成部分与XMLHttpRequest方法的对应关系)
-    1. 请求行
-        xhr.open（&apos;get&apos;,&apos;index.php&apos;）;//Async = false,如需使用 async=false，请将 open() 方法中的第三个参数改为 false
+        <h2 id="基本使用方法"><a href="#基本使用方法" class="headerlink" title="基本使用方法"></a>基本使用方法</h2><p>attr()的使用获取匹配的第一元素的一个属性值，或者是为所有匹配的元素进行属性赋值。</p>
+<p>支持的方法：<br>.attr(attributeName)</p>
+<pre><code>- 获取匹配到的第一个元素的一个属性值
+- 输入值attributeName
+- Type：String，需要获取的属性名称
+</code></pre><p>.attr()方法，只能获取匹配到的第一个元素的值，如果你想要获取匹配到的所有的元素的属性值，那么就需要借助jquery中的循环的方法，比如：.each()和.map();<br>使用jQuery的.attr()方法，获取元素的属性值有两个最重要的优势：</p>
+<ul>
+<li><p>使用简单，它可以直接对一个jQuery对象使用，并且使用过之后可以继续使用其他的jQuery方法。</p>
+</li>
+<li><p>跨浏览器兼容性，有些属性的获取方法在浏览器上不兼容的，甚至于有的在同一浏览器的不同版本之间，都会出现不兼容的问题，.attr()方法降低了这种不兼容性。</p>
+</li>
+</ul>
+<p>注：属性值是一个通常会返回一个字符串，偶尔也会返回类似价值或者数字顺序的值。</p>
+<a id="more"></a>
+<p>注：在IE6，IE7，IE8中，如果你试图去改变一个input元素的type属性，当这个input已经添加到页面时，会抛出一个错误。</p>
+<p>在jQuery 1.6中，.attr()方法查询那些没有设置的属性，则会返回一个undefined。如果你要去恢复或者改变DOM状态值，类似checked，selected，disabled等表单元素的状态，最好使用.prop()方法。</p>
+<h3 id="属性值VS状态值"><a href="#属性值VS状态值" class="headerlink" title="属性值VS状态值"></a>属性值VS状态值</h3><p>在一些特殊的情况下，属性值和状态值的不同是有很大影响的。在jQuery 1.6之前的版本，.attr()方法在恢复一些属性时，有时会把状态值也考虑进去，这样的话，就会导致浏览器的兼容问题。在jQuery 1.6中，.prop()提供的方法可以避免恢复状态值，而.attr()方法会恢复状态值。</p>
+<p>例如：selectedIndex, tagName, nodeName, nodeType, ownerDocument, defaultChecked,和defaultSelected这些属性，就应该使用.prop()方法进行恢复属性值。在jQuery 1.6之前的版本，这些状态值都是可以通过.attr()获取的，虽然获取这些状态值并不是attr的工作范围。这些个状态值和属性是没有任何联系的，它们仅仅是一个状态。</p>
+<p>就布尔逻辑型的属性而言，如果我们定义一个这样的HTML的DOM对象。<input type="checkbox" checked="checked">，并且假设这个HTML对象在Javascript中被命名为elem.</p>
+<p><img src="images/attr-1.jpg" alt="attr与prop"></p>
+<p>根据W3C的规范，“checked”属性，是一个布尔逻辑型的属性，这就意味着，如果该属性存在的话，那么它对应的状态值的取值结果是正确的，例如，即使该属性没有值，或者被设置成一个空字符串，或者设置为“false”,对于布尔逻辑型属性来说都是正确的。</p>
+<p>然而，关于checked的属性，最重要的概念就是你要记住，它跟checked的状态值是毫无关系的，设置checked = “checked”或者checked = “true”等属性设置，和它的状态值true/false是无关的。，而这里的属性值，事实上只是和defaultChecked的状态值有关，并且只能用来设置checkbox的初始的值。checked的属性值并不会随着checkbox的的状态变化而变化，可是checkbox的状态值却会。因此，为了能更好的跨浏览器的兼容，决定了checkbox的checked的状态要使用状态值进行处理。</p>
+<p>例如：</p>
+<p>1、if(elem.checked)<br>2、if($(elem).prop(‘checked’))<br>3、if($(elem).is(‘:checked’))</p>
+<p>这些理论，对于那些动态的属性来说，效果是相同的，例如：selected和value属性。</p>
+<p>补充注释：</p>
+<p>在IE9之前的浏览器版本中，使用.prop()方法，设置一个DOM元素的状态值，相较于那些原始的值（数字，字符串，或者布尔逻辑值）是不同的，如果这个DOM元素在被移除文档之前，没有使用.removeProp()移除这个状态值，那么它将会导致内存泄露，如果想要比较安全的在DOM对象上面设置属性值，而又不会导致内存泄露，那么使用.datazyl//:这句话，没有理解到</p>
+<h3 id="使用attr进行赋值操作"><a href="#使用attr进行赋值操作" class="headerlink" title="使用attr进行赋值操作"></a>使用attr进行赋值操作</h3><p>.attr(attributeName,name)</p>
+<ul>
+<li><p>attributeName:String,需要设置的属性名称</p>
+</li>
+<li><p>String or Number, 需要设置的属性的属性值。</p>
+</li>
+</ul>
+<p>.attr(attributes)</p>
+<ul>
+<li>attributes:Object, 需要设置的属性组成的一个对象。</li>
+</ul>
+<p>.attr(attributeName,function(index,attr))</p>
+<ul>
+<li><p>.attr(attributeName,function(index,attr))</p>
+</li>
+<li><p>.attr(attributeName,function(index,attr))</p>
+</li>
+</ul>
+<p>函数的返回值设置为属性的值，this表示当前选中的元素，接收的第一个参数是表示，当前选中的元素中的位置的序列（从0开始），第二个参数为该元素，对于该属性的原来的属性值。<br>使用.attr()方法去设置属性值是非常方便的，尤其是需要设置多个属性.</p>
 
-    2. 请求头
-        xhr.setRequestHeader(&apos;Content-Type&apos;,&apos;text/html&apos;);
-        get请求可以不设置
-    3.  请求主体
-        xhr,send(null);
-
-- 响应
-    HTTP响应是由服务端发出的，作为客户端更应关心的是响应的结果。
-    HTTP响应3个组成部分与XMLHttpRequest方法或属性的对应关系。
-    由于服务器做出响应需要时间（比如网速慢等原因），所以我们需要监听服务器响应的状态，然后才能进行处理。
-    ```javascript        
-        xhr.onreadystatechange = function () {
-            if(xhr.readyState == 4 &amp;&amp; xhr.status == 200) {
-                var result = document.querySelector(&apos;.result&apos;);
-                result.innerHTML = xhr.responseText;
-            }    
-        }
-    ```     
-     onreadystatechange是Javascript的事件的一种，其意义在于监听XMLHttpRequest的状态
-
-     1. 获取状态行（包括状态码&amp;状态信息）
-
-        xhr.status;//状态码
-
-        xhr.statusText //状态信息
-
-     2. 获取响应头
-
-        // 获取指定头信息
-        xhr.getResponseHeader(&apos;Content-Type&apos;);
-
-        // 获取所有响应头信息
-        xhr.getAllResponseHeaders();
-
-     3. 响应主体
-
-        xhr.responseText;
-
-        xhr.responseXML;
-        我们需要检测并判断响应头的MIME类型后确定使用request.responseText或者request.responseXML
-</code></pre><p><img src="images/xml.png" alt="ajax"></p>
-<h3 id="API详解"><a href="#API详解" class="headerlink" title="API详解"></a>API详解</h3><pre><code>xhr.open() 发起请求，可以是get、post方式
-xhr.setRequestHeader() 设置请求头
-xhr.send() 发送请求主体get方式使用xhr.send(null)
-xhr.onreadystatechange = function () {} 监听响应状态
-xhr.readyState = 0时，UNSENT open尚未调用
-xhr.readyState = 1时，OPENED open已调用
-xhr.readyState = 2时，HEADERS_RECEIVED 接收到头信息
-xhr.readyState = 3时，LOADING 接收到响应主体
-xhr.readyState = 4时，DONE 响应完成
-xhr.status表示响应码，如200
-xhr.statusText表示响应信息，如OK
-xhr.getAllResponseHeaders() 获取全部响应头信息
-xhr.getResponseHeader(&apos;key&apos;) 获取指定头信息
-xhr.responseText、xhr.responseXML都表示响应主体
-
-注：GET和POST请求方式的差异
-    1、GET没有请求主体，使用xhr.send(null)
-    2、GET可以通过在请求URL上添加请求参数
-    3、POST可以通过xhr.send(&apos;name=itcast&amp;age=10&apos;)
-    4、POST需要设置
-        xhr.setRequestHeader(&apos;Content-Type&apos;,&apos;application/x-www-form-urlencoded&apos;);
-    5、GET效率更好
-    6、GET大小限制约4k，POST则没有限制（在服务中post比get危险）
-</code></pre><h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><pre><code>案例1：
-    做一个简单的与服务器进行交互的案例 主要强调使用get方式提交，能够简单与服务器进行通讯
-
-    第一步：我们需要创建一个对象，用于跟服务器进行交互
-    这个对象叫做xmlHttpRequest，这个对象是浏览器给我们提供的
-    目的就是用来跟服务器进行数据交互的.
-
-    var xhr=new XMLHttpRequest;
-
-    第二步：我需要跟服务器进行数据交互，这个时候我需要跟服务端的资源建立
-    一个连接，xhr ，提供了一个方法，叫做open
-
-    xhr.open(&quot;get&quot;,&quot;get.php&quot;,true);
-
-    我们需要发送数据给服务器，我们应该调用xhr提供的send 方法.
-    如果不需要发送数据，我们这个方法也不能省略，我们可以传递一个null过去
-
-    xhr.send(null);
-
-    设置一个回调函数，当服务器端有数据返回的时候会调用这个回调函数与服务器交互的过程当中，服务器会不断的给客户端返回状态，如果有状态返回，则使用该属性readyState 接收。readyState==4  代表服务器已经响应完毕status  服务器端返回给客户端的一个状态码，如果返回的是200代表响应成功。reponseText 用来接收服务器端返回的数据。
-    reponseText 用来接收服务器端返回的数据。
-
-    xhr.onreadystatechange = function () {
-        //说明响应成功.
-        if(xhr.readyState == 4 &amp;&amp; xhr.status == 200){
-            var data = xhr.reponseText;
-            alert(data);
-        }
-    }
-
- 案例2：
-     做一个简单的与服务器进行交互的案例 主要强调使用 post方式提交，能够简单与服务器进行通讯 ，注意：我们使用post 提交的时候，必须给服务器发送一个请求头，Content-Type&apos;, &apos;application/x-www-form-urlencoded，这个是http 协议的规定。
-
-     var xhr=new XMLHttpRequest;
-
-     第二步：我需要跟服务器进行数据交互，这个时候我需要跟服务端的资源  建立一个连接，xhr ，提供了一个方法，叫做open
-
-     xhr.open(&quot;post&quot;,&quot;post.php&quot;,true);
-
-     如果是post 方式提交，必须设置请求头
-
-     xhr.setRequestHeader(&apos;Content-Type&apos;, &apos;application/x-www-form-urlencoded&apos;);
-
-     我们需要发送数据给服务器，我们应该调用xhr提供的send 方法.如果不需要发送数据，我们这个方法也不能省略，我们可以传递一个null过去
-
-      xhr.send(&quot;username=zhangsan&amp;password=1234&quot;);
-
-      设置一个回调函数，当服务器端有数据返回的时候会调用这个回调函数与服务器交互的过程当中，服务器会不断的给客户端返回状态，如果有状态返回，则使用该属性readyState 接收。
-      readyState==4  代表服务器已经响应完毕
-      status  服务器端返回给客户端的一个状态码，如果返回的是200，就代表响应成功了
-      reponseText 用来接收服务器端返回的数据。
-
-      xhr.onreadystatechange = function () {
-          //说明响应成功.
-          if(xhr.readyState == 4 &amp;&amp; xhr.status == 200){
-              var data = xhr.reponseText;
-              alert(data);
-          }
-      }  
-</code></pre><h2 id="jQuery-中的Ajax"><a href="#jQuery-中的Ajax" class="headerlink" title="jQuery 中的Ajax"></a>jQuery 中的Ajax</h2><p>   开发中谁还会去写原生ajax？jQuery为我们提供了更强大的Ajax封装</p>
-<p>   $.ajax({}) 可配置方式发起Ajax请求<br>   $.get() 以GET方式发起Ajax请求<br>   $.post() 以POST方式发起Ajax请求<br>   $(‘form’).serialize() 序列化表单（即格式化key=val&amp;key=val）<br>   url 接口地址<br>   type 请求方式<br>   timeout 请求超时<br>   dataType 服务器返回格式<br>   data 发送请求数据<br>   dataFilter 在请求成功之后调用。传入返回的数据以及 “dataType” 参数的值。并且必须返回新的数据（可能是处理过的）传递给 success 回调函数。<br>   beforeSend: function () {} 请求发起前调用<br>   success 成功响应后调用<br>   error 错误响应时调用<br>   complete 响应完成时调用（包括成功和失败） </p>
-<h3 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h3><pre><code>如果要处理$.ajax()得到的数据，则需要使用回调函数：beforeSend、error、dataFilter、success、complete。
-</code></pre>
       
     </div>
     
@@ -415,13 +337,13 @@ xhr.responseText、xhr.responseXML都表示响应主体
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2014/06/23/ajax数据交互/">ajax数据交互</a></p>
+        <p><span>本文标题:</span><a href="/2014/06/11/jquery中prop-方法和attr-方法的区别/">jquery中prop()方法和attr()方法的区别</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 三木 的个人博客">三木</a></p>
-        <p><span>发布时间:</span>2014年06月23日 - 20时32分</p>
-        <p><span>最后更新:</span>2016年11月09日 - 00时46分</p>
+        <p><span>发布时间:</span>2014年06月11日 - 00时26分</p>
+        <p><span>最后更新:</span>2016年11月11日 - 01时18分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2014/06/23/ajax数据交互/" title="ajax数据交互">http://yoursite.com/2014/06/23/ajax数据交互/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2014/06/23/ajax数据交互/　　作者: 三木" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2014/06/11/jquery中prop-方法和attr-方法的区别/" title="jquery中prop()方法和attr()方法的区别">http://yoursite.com/2014/06/11/jquery中prop-方法和attr-方法的区别/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2014/06/11/jquery中prop-方法和attr-方法的区别/　　作者: 三木" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -434,18 +356,18 @@ xhr.responseText、xhr.responseXML都表示响应主体
 
 <nav id="article-nav">
   
-    <a href="/2014/07/13/js兼容性问题/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2014/06/23/ajax数据交互/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          js兼容性问题
+          ajax数据交互
         
       </div>
     </a>
   
   
-    <a href="/2014/06/11/jquery中prop-方法和attr-方法的区别/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">jquery中prop()方法和attr()方法的区别</div>
+    <a href="/2014/05/06/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -456,7 +378,7 @@ xhr.responseText、xhr.responseXML都表示响应主体
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概念"><span class="toc-number">1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是同步交互"><span class="toc-number">2.</span> <span class="toc-text">什么是同步交互</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是异步交互"><span class="toc-number">3.</span> <span class="toc-text">什么是异步交互</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax"><span class="toc-number">4.</span> <span class="toc-text">ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#API详解"><span class="toc-number">4.1.</span> <span class="toc-text">API详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#案例"><span class="toc-number">4.2.</span> <span class="toc-text">案例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery-中的Ajax"><span class="toc-number">5.</span> <span class="toc-text">jQuery 中的Ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#回调函数"><span class="toc-number">5.1.</span> <span class="toc-text">回调函数</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本使用方法"><span class="toc-number">1.</span> <span class="toc-text">基本使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#属性值VS状态值"><span class="toc-number">1.1.</span> <span class="toc-text">属性值VS状态值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用attr进行赋值操作"><span class="toc-number">1.2.</span> <span class="toc-text">使用attr进行赋值操作</span></a></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -504,7 +426,7 @@ xhr.responseText、xhr.responseXML都表示响应主体
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2014/06/23/ajax数据交互/" data-title="ajax数据交互" data-url="http://yoursite.com/2014/06/23/ajax数据交互/"></div>
+    <div class="ds-thread" data-thread-key="2014/06/11/jquery中prop-方法和attr-方法的区别/" data-title="jquery中prop()方法和attr()方法的区别" data-url="http://yoursite.com/2014/06/11/jquery中prop-方法和attr-方法的区别/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -527,13 +449,13 @@ xhr.responseText、xhr.responseXML都表示响应主体
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2014/07/13/js兼容性问题/" title="上一篇: js兼容性问题">
+            <a href="/2014/06/23/ajax数据交互/" title="上一篇: ajax数据交互">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2014/06/11/jquery中prop-方法和attr-方法的区别/" title="下一篇: jquery中prop()方法和attr()方法的区别">
+            <a href="/2014/05/06/hello-world/" title="下一篇: Hello World">
                 <i class="fa fa-angle-right"></i>
             </a>
         
